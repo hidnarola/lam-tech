@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LendingLayoutRoutingModule } from './lending-layout-routing.module';
 import { HomeModule } from './home/home.module';
+import { AboutUsModule } from './about-us/about-us.module';
 import { LendingLayoutComponent } from './lending-layout.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -10,7 +11,8 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     CommonModule,
     LendingLayoutRoutingModule,
-    HomeModule
+    HomeModule,
+    AboutUsModule
   ],
   declarations: [LendingLayoutComponent, HeaderComponent, FooterComponent]
 })

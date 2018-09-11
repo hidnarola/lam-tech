@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { LendingLayoutModule } from './lending-layout/lending-layout.module';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { LoginModule } from './login/login.module';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     LendingLayoutModule,
+    LoginModule,
     RouterModule.forRoot([])
   ],
   providers: [],

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LendingLayoutComponent } from './lending-layout.component';
 import { HomeComponent } from './home/home.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 @NgModule({
     imports: [
         RouterModule.forRoot([
@@ -11,7 +12,8 @@ import { HomeComponent } from './home/home.component';
                 children: [
                     {
                         path: '', component: HomeComponent,
-                    }
+                    },
+                    { path : 'about_us' , component : AboutUsComponent }
                 ]
             }
         ])
