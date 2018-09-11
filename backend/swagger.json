@@ -1,0 +1,111 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "LAM - API",
+        "description": "LAM - API for fronetend web app"
+    },
+    "host": "127.0.0.1:3000",
+    "basePath": "/",
+    "securityDefinitions": {
+        "jwt": {
+            "type": "apiKey",
+            "in": "header",
+            "name": "x-access-token"
+        }
+    },
+    "security": [
+        {
+            "jwt": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "Root",
+            "description": "API can be access without token (Guest user)"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json",
+        "multipart/form-data"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/user_interest ": {
+            "parameters": [
+                {
+                    "name": "body",
+                    "in": "body",
+                    "required": true,
+                    "schema": {
+                        "required": [
+                            "first_name",
+                            "last_name",
+                            "email",
+                            "company_name",
+                            "sales_ambition",
+                            "current_sales",
+                            "finance_solution",
+                            "enquiring_about"
+                        ],
+                        "properties": {
+                            "first_name": {
+                                "type": "string",
+                                "example": "mm"
+                            },
+                            "last_name": {
+                                "type": "string",
+                                "example": "narola"
+                            },
+                            "email": {
+                                "type": "string",
+                                "example": "mm@narola.email"
+                            },
+                            "company_name": {
+                                "type": "string",
+                                "example": "narola"
+                            },
+                            "sales_ambition": {
+                                "type": "string",
+                                "example": "abc"
+                            },
+                            "current_sales": {
+                                "type": "string",
+                                "example": "abc"
+                            },
+                            "enquiring_about": {
+                                "type": "string",
+                                "example": "abc"
+                            },
+                            "finance_solution": {
+                                "type": "string",
+                                "example": "abc"
+                            },
+                            "enable": {
+                                "type": "boolean",
+                                "example": true
+                            }
+                        }
+                    },
+                    "description": "Required details to Add User Interest Details"
+                }
+            ],
+            "post": {
+                "tags": [
+                    "Root"
+                ],
+                "summary": "Add User Interest Details",
+                "responses": {
+                    "200": {
+                        "description": "Return success message with appropriate status"
+                    }
+                }
+            }
+        }
+    }
+}
