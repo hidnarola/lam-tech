@@ -10,7 +10,7 @@ module.exports = function (req, res, next) {
     if (token) {
         jwt.verify(token, config.ACCESS_TOKEN_SECRET_KEY, function (err, decoded) {
             if (err) {
-                return res.status(config.UNAUTHORIZED).json({message: err.message});
+                return res.status(config.UNAUTHORIZED).json({ message: err.message });
             } else {
                 req.decoded = decoded;
                 next();

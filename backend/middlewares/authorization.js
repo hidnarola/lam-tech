@@ -1,6 +1,7 @@
 var config = require('../config');
 
 module.exports = function (req, res, next) {
+
     if (req.decoded.role == "artist" && req.baseUrl.match('/artist')) {
         req.userInfo = req.decoded;
         next();

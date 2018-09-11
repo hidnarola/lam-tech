@@ -6,20 +6,18 @@ var SALT_WORK_FACTOR = 10;
 //Define a schema
 var Schema = mongoose.Schema;
 
-var CompanyModelSchema = new Schema({
-    user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'user' },
-    registration_number: { type: Number },
-    name: { type: String },
+var CompanyFarmModelSchema = new Schema({
+    property_id: { type: Number },
+    property_name: { type: String },
     address: String,
     state: { type: String },
     country: String,
-    email: String,
-    phone_no: Number,
+    region: String,
     //status: { type: String, default: "active" },
     created_at: { type: Date, default: Date.now }
 }, { versionKey: false });
 
 // Compile model from schema
-var Company = mongoose.model('company', CompanyModelSchema, 'company');
+var CompanyFarm = mongoose.model('companyfarm', CompanyFarmModelSchema, 'companyfarm');
 
-module.exports = Company;
+module.exports = CompanyFarm;
