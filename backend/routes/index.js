@@ -93,10 +93,7 @@ router.post('/user_interest', async (req, res) => {
 });
 
 
-
-
 // set password
-
 router.post('/set_password', async (req, res) => {
   var schema = {
     "email": {
@@ -138,7 +135,6 @@ router.post('/set_password', async (req, res) => {
 });
 
 
-
 // user login
 router.post('/user_login', async (req, res) => {
   var schema = {
@@ -165,7 +161,7 @@ router.post('/user_login', async (req, res) => {
         if (bcrypt.compareSync(req.body.password, login_resp.data.password) && req.body.email == login_resp.data.email) {
           var refreshToken = jwt.sign({ id: login_resp.data._id }, config.REFRESH_TOKEN_SECRET_KEY, {});
           let update_resp = await common_helper.update(User, { "_id": login_resp.data._id }, { "refresh_token": refreshToken, "last_login": Date.now() });
-          var LoginJson = { id: login_resp.data._id, email: login_resp.email, role: "data" };
+          var LoginJson = { id: login_resp.data._id, email: login_resp.email, role: "user" };
           var token = jwt.sign(LoginJson, config.ACCESS_TOKEN_SECRET_KEY, {
             expiresIn: config.ACCESS_TOKEN_EXPIRE_TIME
           });
@@ -196,7 +192,6 @@ router.post('/user_login', async (req, res) => {
 
 
 //forgot password
-
 router.post('/user_forgot_password', async (req, res) => {
   var schema = {
     'email': {
