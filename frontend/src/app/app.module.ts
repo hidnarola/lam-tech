@@ -5,7 +5,8 @@ import { LendingLayoutModule } from './lending-layout/lending-layout.module';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
-
+import { RegisterModule } from './register/register.module';
+import { ForgetPasswordModule } from './forget-password/forget-password.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,8 @@ import { LoginModule } from './login/login.module';
     BrowserModule,
     LendingLayoutModule,
     LoginModule,
+    RegisterModule,
+    ForgetPasswordModule,
     RouterModule.forRoot([])
   ],
   providers: [],
