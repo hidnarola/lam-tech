@@ -7,6 +7,7 @@ var SALT_WORK_FACTOR = 10;
 var Schema = mongoose.Schema;
 
 var CompanyFarmModelSchema = new Schema({
+    user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'user' },
     property_id: { type: Number },
     property_name: { type: String },
     address: String,

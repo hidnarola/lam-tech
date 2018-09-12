@@ -46,7 +46,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use(expressValidator());
 
-// Support corss origin request
+// Support cross origin request
 app.use(function (req, res, next) {
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', '*');
