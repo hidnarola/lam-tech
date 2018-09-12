@@ -1,0 +1,63 @@
+@font-face { font-family:'Gotham Medium';
+	src: url('/fonts/Gotham Medium.eot');
+	src: url('/fonts/Gotham Medium.eot?#iefix') format('embedded-opentype'),
+		 url('/fonts/Gotham Medium.woff2') format('woff2'),
+		 url('/fonts/Gotham Medium.woff') format('woff'),
+		 url('/fonts/Gotham Medium.svg#Gotham Medium') format('svg');
+	font-weight: 500; font-style: normal;
+}
+
+*{margin:0; padding:0;}
+body{ margin:0; padding:0; font-size:100%; line-height:100%; font-family:'Open Sans'; font-weight:400; background:#1b516c;}
+
+.weare-leading{ text-align:center;}
+.weare-leading h2{ color:#fff; font-size:40px; line-height:50px; font-weight:300; margin:0 0 20px;}
+.weare-leading p{ color:#fff; font-size:15px; line-height:20px; font-weight:400; margin:0 0 25px;}
+.weare-leading a{ width:230px; height:50px; background:#839269; border:2px solid #839269; padding:13px; line-height:20px; display:block; font-weight:700; font-size:15px; color:#fff; margin:0 auto; border-radius:10px;}
+.weare-leading  span{ display:block; text-align:center; margin:45px 0 30px;}
+
+.avout-l h2{ font-size:30px; font-weight:300; color:#323B61; margin:0 0 22px; padding:0; line-height:40px;}
+.avout-l p{ font-size:13px; font-weight:30px; color:#787E97; line-height:26px;}
+#finance-solutions {text-align:center;}
+#finance-solutions h2{ margin:0; padding:0; font-size:30px; font-weight:300; line-height:46px; display:block; color:#323B61; letter-spacing:-.02em;}
+#finance-solutions ul{ margin:0; padding:0; display:block; list-style:none;}
+#finance-solutions ul li{ width:300px; margin:0 40px;}
+.finance-solutions-img{ position:relative;}
+.finance-solutions-img span{}
+.finance-solutions-img h3{ color:#fff; font-size:20px; font-weight:700; line-height:24px; position:absolute; bottom:25px; left:25px;}
+.finance-solutions-body{ padding:30px 20px; text-align:left;}
+.finance-solutions-body p{font-size:13px; line-height:26px; color:#787E97; font-weight:400;}
+
+#how-work h2{ color:#323B61; font-size:30px; letter-spacing:-.02em; font-weight:300; display:block;}
+#how-work ul{ margin:0; padding:0; list-style:none;}
+#how-work ul li{width:25%;}
+.how-work-box span{ width:100%; display:block; font-size:16px; font-weight:900; color:#839269;}
+.how-work-box h3{color:#323B61; font-size:26px; font-weight:700; display:block;}
+.how-work-box p{ color:#787E97; font-size:13px; line-height:26px; display:block;}
+.how-work-btn{ display:block; text-align:center;}
+.how-work-btn a{ background:#fff; border:2px solid #839269; width:230px; padding:13px; line-height:20px; display:block; margin:0 auto; color:#839269; font-size:11px; font-weight:700; border-radius:10px;}
+
+#countries{ text-align:center;}
+#countries h2{ color:#323B61; font-size:30px; font-weight:300; letter-spacing:-.02em;}
+#countries p{ color:#787E97; font-size:13px; line-height:26px; display:block;}
+
+#want-started{text-align:center; display:block; padding:195px 0 85px;}
+#want-started h2{ color:#fff; font-size:40px; font-weight:300; letter-spacing:-.02em;}
+#want-started p{ color:#fff; font-size:14px; line-height:26px; display:block;}
+#want-started a{ width:230px; padding:13px; line-height:20px;border:2px solid #839269; background:#839269; color:#fff; font-size:11px; font-weight:700; text-transform:uppercase; margin:0 auto; border-radius:12px; display:block;}
+
+.footer-nav {border-top: 1px solid #355D71;padding: 40px 0;}
+.footer-nav ul{ list-style:none; margin:0; padding:0;}
+.footer-nav ul li{ width:16.66%; text-align:center;}
+.footer-nav ul li a{ font-size:11px; font-weight:700; line-height:100%; display:block; color:rgba(255,255,255,.5); letter-spacing:.2em; text-transform:uppercase;}
+.footer-nav ul li.active a,
+.footer-nav ul li a:hover{ color:#fff;}
+
+.header-nav ul{list-style:none; margin:0; padding:0; align-items:center;}
+.header-nav ul li{ margin-left:35px;}
+.header-nav ul li a{color:rgba(255,255,255,.5); font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; padding:0 10px;}
+.header-nav ul li.active a,
+.header-nav ul li a:hover{ color:#fff;}
+.header-nav{ margin-left:auto;}
+.header-nav ul li:last-child a{  border: 1px solid rgba(255,255,255,.5);border-radius: 10px; color: #fff; line-height: 21px; display: block; padding: 10px 11px 12px; min-width: 160px; text-align: center;} 
+.header-wrap.d-flex {align-items:center; padding:20px 0 100px;}
