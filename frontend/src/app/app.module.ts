@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { RegisterModule } from './register/register.module';
 import { ForgetPasswordModule } from './forget-password/forget-password.module';
+import { OverviewModule } from './overview/overview.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ForgetPasswordModule } from './forget-password/forget-password.module';
     LoginModule,
     RegisterModule,
     ForgetPasswordModule,
+    OverviewModule,
     RouterModule.forRoot([])
   ],
   providers: [],
