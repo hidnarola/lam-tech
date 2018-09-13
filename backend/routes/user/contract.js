@@ -11,14 +11,14 @@ var _ = require('underscore');
 const saltRounds = 10;
 
 var common_helper = require('../../helpers/common_helper');
-var CompanyFarm = require('../../models/companyfarm');
+var ContractFarm = require('../../models/contractfarm');
 
 var mongoose = require('mongoose');
 var ObjectId = mongoose.Types.ObjectId;
 var fs = require('fs');
 
-//add farm details
-// user/farm
+//add contract details
+// user/contract
 router.post('/', async (req, res) => {
     var schema = {
         "property_id": {
@@ -58,7 +58,8 @@ router.post('/', async (req, res) => {
             "address": req.body.address,
             "region": req.body.region
         };
-        var farm_resp = await common_helper.insert(CompanyFarm, reg_obj);
+
+        var farm_resp = await common_helper.insert(ContractFarm, reg_obj);
         if (farm_resp.status == 0) {
             logger.debug("Error = ", farm_resp.error);
             res.status(config.INTERNAL_SERVER_ERROR).json(farm_resp);
@@ -73,12 +74,12 @@ router.post('/', async (req, res) => {
 });
 
 
-//delete farm details
-// user/farm
+//delete contract details
+// user/contract
 router.delete('/', async (req, res) => {
     var tmp = _.map(req.body.farm_id, function (id) { return ObjectId(id) });
     let id = tmp;
-    var farm_resp = await common_helper.multipledelete(CompanyFarm, id);
+    var farm_resp = await common_helper.multipledelete(ContractFarm, id);
     if (farm_resp.status == 0) {
         logger.debug("Error = ", farm_resp.error);
         res.status(config.INTERNAL_SERVER_ERROR).json(farm_resp);
@@ -89,9 +90,9 @@ router.delete('/', async (req, res) => {
 });
 
 
-//update farm details
-// user/farm/:farm_id
-router.put("/:farm_id", async (req, res) => {
+//update contract details
+// user/contract/:contract_id
+router.put("/:contract_id", async (req, res) => {
     user_id = req.userInfo.id;
     var obj = {
     };
@@ -113,7 +114,7 @@ router.put("/:farm_id", async (req, res) => {
     if (req.body.region) {
         obj.region = req.body.region;
     }
-    var resp_data = await common_helper.update(CompanyFarm, { "user_id": new ObjectId(user_id), "_id": new ObjectId(req.params.farm_id) }, obj);
+    var resp_data = await common_helper.update(ContractFarm, { "user_id": new ObjectId(user_id), "_id": new ObjectId(req.params.contract_id) }, obj);
     if (resp_data.status == 0) {
         logger.error("Error occured while updating = ", resp_data);
         res.status(config.INTERNAL_SERVER_ERROR).json(resp_data);
@@ -123,11 +124,11 @@ router.put("/:farm_id", async (req, res) => {
     }
 });
 
-//farm listing
-//user/farm
+//contract listing
+//user/contract
 router.get("/", async (req, res) => {
     user_id = req.userInfo.id;
-    var resp_data = await common_helper.find(CompanyFarm, { "user_id": new ObjectId(user_id) }, 2);
+    var resp_data = await common_helper.find(ContractFarm, { "user_id": new ObjectId(user_id) }, 2);
     if (resp_data.status == 0) {
         logger.error("Error occured while fetching User = ", resp_data);
         res.status(config.INTERNAL_SERVER_ERROR).json(resp_data);
@@ -138,11 +139,11 @@ router.get("/", async (req, res) => {
 });
 
 
-//farm details
-//user/farm/:farm_id
+//contract details
+//user/contract/:contract_id
 router.get("/:farm_id", async (req, res) => {
     user_id = req.userInfo.id;
-    var resp_data = await common_helper.find(CompanyFarm, { "user_id": new ObjectId(user_id), "_id": new ObjectId(req.params.farm_id) }, 1);
+    var resp_data = await common_helper.find(ContractFarm, { "user_id": new ObjectId(user_id), "_id": new ObjectId(req.params.farm_id) }, 1);
     if (resp_data.status == 0) {
         logger.error("Error occured while fetching User = ", resp_data);
         res.status(config.INTERNAL_SERVER_ERROR).json(resp_data);

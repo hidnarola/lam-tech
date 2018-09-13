@@ -7,6 +7,7 @@ var SALT_WORK_FACTOR = 10;
 var Schema = mongoose.Schema;
 
 var CustomerModelSchema = new Schema({
+    user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'user' },
     company_registration_number: { type: Number },
     company_name: { type: String },
     company_address: String,
@@ -19,7 +20,7 @@ var CustomerModelSchema = new Schema({
     representative_name: String,
     representative_title: String,
     representative_email: String,
-    representative_phone: String,
+    representative_phone_no: String,
     //status: { type: String, default: "active" },
     created_at: { type: Date, default: Date.now }
 }, { versionKey: false });
