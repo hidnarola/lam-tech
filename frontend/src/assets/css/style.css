@@ -8,9 +8,9 @@
 }
 
 *{margin:0; padding:0;}
-body{ margin:0; padding:0; font-size:100%; line-height:100%; font-family:'Open Sans'; font-weight:400; background:#1b516c;}
-
-.weare-leading{ text-align:center;}
+body{ margin:0; padding:0; font-size:100%; line-height:100%; font-family:'Open Sans'; font-weight:400;}
+ 
+#weare-leading:after{ content:''; background:url('/img/bg-hero.png') no-repeat center 0; display:block; height:796px; width:100%; position:absolute; top:0; left:0;}
 .weare-leading h2{ color:#fff; font-size:40px; line-height:50px; font-weight:300; margin:0 0 20px;}
 .weare-leading p{ color:#fff; font-size:15px; line-height:20px; font-weight:400; margin:0 0 25px;}
 .weare-leading a{ width:230px; height:50px; background:#839269; border:2px solid #839269; padding:13px; line-height:20px; display:block; font-weight:700; font-size:15px; color:#fff; margin:0 auto; border-radius:10px;}
