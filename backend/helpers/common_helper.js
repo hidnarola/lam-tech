@@ -49,8 +49,6 @@ common_helper.find = async (collection, data = {}, type = 2) => {
 }
 
 common_helper.insert = async (collection, data = {}) => {
-    console.log('data', data);
-
     if (Object.keys(data).length > 0) {
         try {
             var insertObj = new collection(data);
@@ -79,8 +77,6 @@ common_helper.insert = async (collection, data = {}) => {
             error: err
         };
     }
-
-
 }
 
 common_helper.update = async (collection, id, data) => {
@@ -132,5 +128,30 @@ common_helper.delete = async (collection, id, data = {}) => {
     }
 }
 
+common_helper.multipledelete = async (collection, condition) => {
+
+    try {
+        var data = await collection.remove({
+            _id: { $in: condition }
+        });
+
+
+        if (data) {
+            return {
+                status: 1,
+                message: "data deleted",
+                data: data
+            };
+        } else {
+            return { status: 2, message: "No data deleted" };
+        }
+    } catch (err) {
+        return {
+            status: 0,
+            message: "Error occured while deleting data",
+            error: err
+        };
+    }
+}
 
 module.exports = common_helper;
