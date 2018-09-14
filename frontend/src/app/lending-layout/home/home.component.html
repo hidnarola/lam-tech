@@ -3,7 +3,7 @@
       <div class="weare-leading">
         <h2>We are leading the way in Technology <br/> Enabled Livestock Finance</h2>
         <p>We are constantly reimagining the way livestock are financed.</p>
-        <a href="javascript:;">GET STARTED</a>
+        <a href="javascript:;" (click)="openGettingStartedModal(getStarted)">GET STARTED</a>
         <span><img src="img/macbook.png" alt=""/></span>
       </div>  
   </div>
@@ -126,13 +126,78 @@
 </section>
 
 <ng-template #getStarted>
-  <div class="modal-header">
-    <h4 class="modal-title pull-left">Getting Started</h4>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="getStartModalRef.hide()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
   <div class="modal-body">
-    This is a modal.
+      <div class="get-started-head">
+        <h2>Get Started</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consectetur nulla <br/> nec interdum scelerisque.</p>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="getStartModalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="get-started-body d-flex">
+        <div class="login-input">
+            <label>First Name</label>
+            <input type="text" name="" placeholder="First Name">
+        </div>
+        <div class="login-input">
+            <label>Sur Name</label>
+            <input type="text" name="" placeholder="Sur Name">
+        </div>
+
+        <div class="login-input">
+            <label>Company Name</label>
+            <input type="text" name="" placeholder="Company">
+        </div>
+        <div class="login-input">
+            <label>Email</label>
+            <input type="text" name="" placeholder="Email">
+        </div>
+
+        <div class="login-input">
+            <label>Enquiring about</label>
+            <div class="select-wrap">
+              <select>
+                <option>Enquiring 01</option>
+                <option>Enquiring 02</option>
+                <option>Enquiring 03</option>
+            </select>
+            </div>
+        </div>
+        <div class="login-input">
+            <label>Finance Solution Required in</label>
+            <div class="select-wrap">
+              <select>
+                <option>Finance 01</option>
+                <option>Finance 02</option>
+                <option>Finance 03</option>
+              </select>
+           </div>   
+        </div>
+
+        <div class="login-input">
+            <label>Your Current Sales</label>
+            <div class="select-wrap">
+              <select>
+                <option>Sales 01</option>
+                <option>Sales 02</option>
+                <option>Sales 03</option>
+              </select>
+            </div>  
+        </div>
+        <div class="login-input">
+            <label>Your 1-3 year Sales Ambitions</label>
+            <div class="select-wrap">
+              <select>
+                <option>Sales 01</option>
+                <option>Sales 02</option>
+                <option>Sales 03</option>
+              </select>
+            </div>  
+        </div>
+        <div class="get-started-btn">
+          <button type="">SUBMIT</button>
+        </div>
+
+      </div>
   </div>
 </ng-template>

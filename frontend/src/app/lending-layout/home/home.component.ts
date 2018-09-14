@@ -15,6 +15,6 @@ export class HomeComponent implements OnInit {
   }
   // Open Getting start modal
   openGettingStartedModal(template) {
-    this.getStartModalRef = this.modalService.show(template);
+    this.getStartModalRef = this.modalService.show(template, {class : 'get-started-popup'});
   }
 }
