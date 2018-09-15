@@ -11,7 +11,7 @@ var PurchaseInstructionModelSchema = new Schema({
     date_of_instruction: { type: Date, default: Date.now },
     purchase_contract_no: { type: Number },
     purchase_order_no: Number,
-    adent_signed: { type: String },
+    agent_signed: { type: String },
     agent_email: String,
     agent_phone_no: Number,
     purchasing_stock_for: String,

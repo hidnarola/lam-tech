@@ -48,7 +48,7 @@ router.post('/add_company', async (req, res) => {
     req.checkBody(schema);
     var errors = req.validationErrors();
     if (!errors) {
-        var reg_obj = {
+        var obj = {
             "user_id": req.userInfo.id,
             "registration_number": req.body.registration_number,
             "name": req.body.name,
@@ -57,7 +57,7 @@ router.post('/add_company', async (req, res) => {
             "country": req.body.country,
             "phone_no": req.body.phone_no
         };
-        var company_resp = await common_helper.insert(Company, reg_obj);
+        var company_resp = await common_helper.insert(Company, obj);
         if (company_resp.status == 0) {
             logger.debug("Error = ", company_resp.error);
             res.status(config.INTERNAL_SERVER_ERROR).json(company_resp);
@@ -70,7 +70,6 @@ router.post('/add_company', async (req, res) => {
         res.status(config.BAD_REQUEST).json({ message: errors });
     }
 });
-
 
 
 module.exports = router;
