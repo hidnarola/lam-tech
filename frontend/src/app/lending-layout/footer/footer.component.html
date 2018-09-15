@@ -2,12 +2,12 @@
     <div class="container">
         <div class="footer-nav">
             <ul class="d-flex">
-                <li><a href="javascript:;" routerLink="/">Home</a></li>
-                <li><a href="javascript:;" routerLink="/about_us">About us</a></li>
-                <li><a href="javascript:;" routerLink="/finance_solutions">Finance solutions</a></li>
-                <li><a href="javascript:;" routerLink="/how_it_works">How it Works</a></li>
-                <li><a href="javascript:;" routerLink="/countries">Countries</a></li>
-                <li><a href="javascript:;" routerLink="/login">Sign in</a></li>
+                <li routerLinkActive="active"><a href="javascript:;" routerLink="/">Home</a></li>
+                    <li><a href="javascript:;" (click)="gotoDiv('about-section')">About us</a></li>
+                    <li><a href="javascript:;" (click)="gotoDiv('finance-solutions')">Finance solutions</a></li>
+                    <li><a href="javascript:;" (click)="gotoDiv('how-work')">How it Works</a></li>
+                    <li><a href="javascript:;" (click)="gotoDiv('countries')">Countries</a></li>
+                    <li><a href="javascript:;" routerLink="/login">Sign in</a></li>
             </ul>
         </div> 
     </div>

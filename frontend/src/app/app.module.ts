@@ -7,6 +7,11 @@ import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { RegisterModule } from './register/register.module';
 import { ForgetPasswordModule } from './forget-password/forget-password.module';
+import { OverviewModule } from './overview/overview.module';
+import { MainLayoutModule } from './main-layout/main-layout.module';
+
+// load service
+import { MessageService } from './shared/message.service';
 
 @NgModule({
   declarations: [
@@ -15,12 +20,14 @@ import { ForgetPasswordModule } from './forget-password/forget-password.module';
   imports: [
     BrowserModule,
     LendingLayoutModule,
+    MainLayoutModule,
     LoginModule,
     RegisterModule,
     ForgetPasswordModule,
+    OverviewModule,
     RouterModule.forRoot([])
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

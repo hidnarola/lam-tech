@@ -1,0 +1,159 @@
+<div class="overview-wrap">
+	<div class="container">
+		<div class="overview-head d-flex">
+			<div class="overview-head-l d-flex">
+				<div class="overview-logo"><a href=""><img src="img/logo.png" alt="" /></a></div>
+				<div class="overview-srh">
+					<form class="d-flex">
+						<button><img src="img/search.png" alt="" /></button>
+						<input type="text" name="" placeholder="SEARCH">
+					</form>
+				</div>
+			</div>
+			<div class="overview-head-r">
+				<div class="d-flex">
+					<div class="overview-setting ">
+						<a href="" class="d-flex">
+							<span><img src="img/settings-icon.png" alt="" /></span>
+							<strong>SYSTEM ADMIN</strong>
+						</a>
+					</div>
+					<div class="overview-alert" dropdown>
+						<a href="javascript:;" id="button-basic" dropdownToggle aria-controls="dropdown-basic" >
+							<img src="img/notification-icon.png" alt="" />
+						</a>
+						<div id="dropdown-basic" *dropdownMenu class="dropdown-menu notification-dropdown dropdown-menu-right" role="menu" aria-labelledby="button-basic">
+						    <div class="d-flex">
+						    	<h3>NOTIFICATIONS</h3> <a href="">CLEAR ALL</a>
+						    </div>
+						    <ul>
+						    	<li>
+						    		<div class="notification-dropdown-li">
+						    			<h4>LOREM IPSUM	</h4>
+						    			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						    		</div>
+						    	</li>
+						    	<li>
+						    		<div class="notification-dropdown-li">
+						    			<h4>LOREM IPSUM	</h4>
+						    			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						    		</div>
+						    	</li>
+						    	<li>
+						    		<div class="notification-dropdown-li">
+						    			<h4>LOREM IPSUM	</h4>
+						    			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						    		</div>
+						    	</li>
+						    	<li>
+						    		<div class="notification-dropdown-li">
+						    			<h4>LOREM IPSUM	</h4>
+						    			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						    		</div>
+						    	</li>
+						    </ul>
+						</div>
+					</div>
+					<div class="overview-user" dropdown>
+						<a href="javascript:;" id="button-basic" dropdownToggle aria-controls="dropdown-basic">
+							<img src="img/user-profile.png" alt="" />
+						</a>
+						<div id="dropdown-basic" *dropdownMenu class="dropdown-menu user-dropdown dropdown-menu-right" role="menu" aria-labelledby="button-basic">
+							<div class="user-dropdown-hdr">
+								<span><img src="img/user-profile-big.png" alt="" /></span>
+								<strong>Lorem Ipsum</strong>
+							</div>
+							<div class="user-dropdown-body">
+								<div class="logged-as">
+									<h5>Logged AS</h5>
+									<div class="" dropdown>
+										<h6 id="button-basic" dropdownToggle aria-controls="dropdown-basic">Administrator</h6>
+										<div id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+											<ul>
+												<li><a href="">Administrator 01</a></li>
+												<li><a href="">Administrator 02</a></li>
+												<li><a href="">Administrator 03</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<button class="btn-css green-btn-bdr">LOGOUT</button>
+							</div>
+						</div> 
+					</div>
+				</div>	
+			</div>
+		</div>
+		<div class="overview-body d-flex">
+			<div class="overview-body-l">
+				<div class="overview-body-l-head">
+					<h2>Overview</h2>
+					<p>What do you want to access?</p>
+				</div>
+				<div class="overview-body-l-body">
+					<ul class="d-flex">
+						<li class="cow-set-up-li">
+							<div class="overview-l-box">
+								<a href="javascript:;" routerLink="/dashboard/cow_setup">
+									<span></span>
+									<strong>Cow Set Up</strong>
+								</a>
+							</div>
+						</li>
+						<li class="cow-bank-li">
+							<div class="overview-l-box">
+								<a href="javascript:;" routerLink="/dashboard/cow_bank">
+									<span></span>
+									<strong>Cow Bank</strong>
+								</a>
+							</div>
+						</li>
+						<li class="cow-cloud-li">
+							<div class="overview-l-box">
+								<a href="">
+									<span></span>
+									<strong>Cow Cloud</strong>
+								</a>
+							</div>
+						</li>
+						<li class="cow-pliance-li">
+							<div class="overview-l-box">
+								<a href="">
+									<span></span>
+									<strong>Cow Pliance</strong>
+								</a>
+							</div>
+						</li>
+						<li class="cow-municator-li">
+							<div class="overview-l-box">
+								<a href="">
+									<span></span>
+									<strong>Cow Municator</strong>
+								</a>
+							</div>
+						</li>
+						<li class="cow-journal-li">
+							<div class="overview-l-box">
+								<a href="">
+									<span></span>
+									<strong>Cow Journal</strong>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="overview-body-r">
+				<h2>QUICK LINKS</h2>
+				<ul>
+					<li class="sales-contracts-li"><a href="javascript:;" routerLink="/dashboard/cow_bank"><span></span> <strong>Sales Contracts</strong></a></li>
+					<li class="cattle-purchases-li"><a href="javascript:;" routerLink="/dashboard/cow_bank/cattle_purchase"><span></span><strong>Cattle Purchases</strong></a></li>
+					<li class="cattle-receipts-li"><a href="javascript:;" routerLink="/dashboard/cow_bank/cattle_receipts"><span></span> <strong>Cattle Receipts</strong></a></li>
+					<li class="inducation-feed-li"><a href="javascript:;" routerLink="/dashboard/cow_bank/induction_feed_cost"><span></span> <strong>Induction & Feed Costs</strong></a></li>
+					<li class="cattle-deliveries-li"><a href="javascript:;" routerLink="/dashboard/cow_bank/cattle-deliveries"><span></span> <strong>Cattle Deliveries</strong></a></li>
+					<li class="reports-li"><a href="javascript:;" routerLink="/dashboard/cow_bank/reports"><span></span> <strong>Reports</strong></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
