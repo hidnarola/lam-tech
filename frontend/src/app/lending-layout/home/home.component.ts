@@ -34,6 +34,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   // Scroll to div
   scroll(el) {
     let ele = document.getElementById(el);
-      ele.scrollIntoView();
+      ele.scrollIntoView({
+        behavior: 'smooth' 
+      });
   }
 }
