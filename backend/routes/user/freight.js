@@ -11,23 +11,27 @@ var _ = require('underscore');
 const saltRounds = 10;
 
 var common_helper = require('../../helpers/common_helper');
-var CompanyFarm = require('../../models/companyfarm');
+var Freight = require('../../models/freight');
 
 var mongoose = require('mongoose');
 var ObjectId = mongoose.Types.ObjectId;
 var fs = require('fs');
 
-//add farm details
-// user/farm
+//add freight details
+// user/freight
 router.post('/', async (req, res) => {
     var schema = {
-        "property_id": {
+        "registration_number": {
             notEmpty: true,
-            errorMessage: "Property Id is required"
+            errorMessage: "Registration Number is required"
         },
-        "property_name": {
+        "name": {
             notEmpty: true,
-            errorMessage: "Property Name is required"
+            errorMessage: "Company Name is required"
+        },
+        "address": {
+            notEmpty: true,
+            errorMessage: "Address is required"
         },
         "state": {
             notEmpty: true,
@@ -37,13 +41,17 @@ router.post('/', async (req, res) => {
             notEmpty: true,
             errorMessage: "Country is required"
         },
-        "address": {
+        "email": {
             notEmpty: true,
-            errorMessage: "Address is required"
+            errorMessage: "Email is required"
         },
-        "region": {
+        "receipt_email": {
             notEmpty: true,
-            errorMessage: "Region is required"
+            errorMessage: "Receipt Email is required"
+        },
+        "phone_no": {
+            notEmpty: true,
+            errorMessage: "Phone Number is required"
         }
     };
     req.checkBody(schema);
@@ -51,20 +59,23 @@ router.post('/', async (req, res) => {
     if (!errors) {
         var reg_obj = {
             "user_id": req.userInfo.id,
-            "property_id": req.body.property_id,
-            "property_name": req.body.property_name,
+            "registration_number": req.body.registration_number,
+            "name": req.body.name,
+            "address": req.body.address,
             "state": req.body.state,
             "country": req.body.country,
-            "address": req.body.address,
-            "region": req.body.region
+            "email": req.body.email,
+            "receipt_email": req.body.receipt_email,
+            "phone_no": req.body.phone_no,
         };
-        var farm_resp = await common_helper.insert(CompanyFarm, reg_obj);
-        if (farm_resp.status == 0) {
-            logger.debug("Error = ", farm_resp.error);
-            res.status(config.INTERNAL_SERVER_ERROR).json(farm_resp);
+
+        var freight_resp = await common_helper.insert(Freight, reg_obj);
+        if (freight_resp.status == 0) {
+            logger.debug("Error = ", freight_resp.error);
+            res.status(config.INTERNAL_SERVER_ERROR).json(freight_resp);
         } else {
             logger.trace("User Interest has been inserted");
-            res.json({ "message": "Farm details has been added successfully", "data": farm_resp })
+            res.json({ "message": "Freight details has been added successfully", "data": freight_resp })
         }
     } else {
         logger.error("Validation Error = ", errors);
@@ -73,33 +84,36 @@ router.post('/', async (req, res) => {
 });
 
 
-//delete farm details
-// user/farm
+//delete Freight details
+// user/freight
 router.delete('/', async (req, res) => {
-    var tmp = _.map(req.body.farm_id, function (id) { return ObjectId(id) });
+    var tmp = _.map(req.body.freight_id, function (id) { return ObjectId(id) });
     let id = tmp;
-    var farm_resp = await common_helper.multipledelete(CompanyFarm, id);
-    if (farm_resp.status == 0) {
-        logger.debug("Error = ", farm_resp.error);
-        res.status(config.INTERNAL_SERVER_ERROR).json(farm_resp);
+    var freight_resp = await common_helper.multipledelete(Freight, id);
+    if (freight_resp.status == 0) {
+        logger.debug("Error = ", freight_resp.error);
+        res.status(config.INTERNAL_SERVER_ERROR).json(freight_resp);
     } else {
         logger.trace("User Interest has been inserted");
-        res.json({ "message": "Farm details has been added successfully", "data": farm_resp })
+        res.json({ "message": "Freight details has been added successfully", "data": freight_resp })
     }
 });
 
 
-//update farm details
-// user/farm/:farm_id
-router.put("/:farm_id", async (req, res) => {
+//update Freight details
+// user/freight/:freight_id
+router.put("/:freight_id", async (req, res) => {
     user_id = req.userInfo.id;
     var obj = {
     };
-    if (req.body.property_id) {
-        obj.property_id = req.body.property_id;
+    if (req.body.registration_number) {
+        obj.registration_number = req.body.registration_number;
     }
-    if (req.body.property_name) {
-        obj.property_name = req.body.property_name;
+    if (req.body.name) {
+        obj.name = req.body.name;
+    }
+    if (req.body.address) {
+        obj.address = req.body.address;
     }
     if (req.body.state) {
         obj.state = req.body.state;
@@ -107,13 +121,17 @@ router.put("/:farm_id", async (req, res) => {
     if (req.body.country) {
         obj.country = req.body.country;
     }
-    if (req.body.address) {
-        obj.address = req.body.address;
+    if (req.body.phone_no) {
+        obj.phone_no = req.body.phone_no;
     }
-    if (req.body.region) {
-        obj.region = req.body.region;
+    if (req.body.receipt_email) {
+        obj.receipt_email = req.body.receipt_email;
     }
-    var resp_data = await common_helper.update(CompanyFarm, { "user_id": new ObjectId(user_id), "_id": new ObjectId(req.params.farm_id) }, obj);
+    if (req.body.email) {
+        obj.email = req.body.email;
+    }
+
+    var resp_data = await common_helper.update(Freight, { "user_id": new ObjectId(user_id), "_id": new ObjectId(req.params.freight_id) }, obj);
     if (resp_data.status == 0) {
         logger.error("Error occured while updating = ", resp_data);
         res.status(config.INTERNAL_SERVER_ERROR).json(resp_data);
@@ -123,11 +141,11 @@ router.put("/:farm_id", async (req, res) => {
     }
 });
 
-//farm listing
-//user/farm
+//Freight listing
+//user/freight
 router.get("/", async (req, res) => {
     user_id = req.userInfo.id;
-    var resp_data = await common_helper.find(CompanyFarm, { "user_id": new ObjectId(user_id) }, 2);
+    var resp_data = await common_helper.find(Freight, { "user_id": new ObjectId(user_id) }, 2);
     if (resp_data.status == 0) {
         logger.error("Error occured while fetching User = ", resp_data);
         res.status(config.INTERNAL_SERVER_ERROR).json(resp_data);
@@ -138,11 +156,11 @@ router.get("/", async (req, res) => {
 });
 
 
-//farm details
-//user/farm/:farm_id
-router.get("/:farm_id", async (req, res) => {
+//Freight details
+//user/freight/:freight_id
+router.get("/:freight_id", async (req, res) => {
     user_id = req.userInfo.id;
-    var resp_data = await common_helper.find(CompanyFarm, { "user_id": new ObjectId(user_id), "_id": new ObjectId(req.params.farm_id) }, 1);
+    var resp_data = await common_helper.find(Freight, { "user_id": new ObjectId(user_id), "_id": new ObjectId(req.params.freight_id) }, 1);
     if (resp_data.status == 0) {
         logger.error("Error occured while fetching User = ", resp_data);
         res.status(config.INTERNAL_SERVER_ERROR).json(resp_data);
@@ -151,6 +169,5 @@ router.get("/:farm_id", async (req, res) => {
         res.status(config.OK_STATUS).json(resp_data);
     }
 });
-
 
 module.exports = router;

@@ -25,6 +25,6 @@ var PurchaseInternalTransferModelSchema = new Schema({
 }, { versionKey: false });
 
 // Compile model from schema
-var PurchaseIn = mongoose.model('purchaseIn', PurchaseInternalTransferModelSchema, 'purchaseIn');
+var PurchaseIn = mongoose.model('purchaseInternal', PurchaseInternalTransferModelSchema, 'purchaseInternal');
 
 module.exports = PurchaseIn;

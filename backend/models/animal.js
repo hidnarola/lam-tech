@@ -6,21 +6,20 @@ var SALT_WORK_FACTOR = 10;
 //Define a schema
 var Schema = mongoose.Schema;
 
-var FreightModelSchema = new Schema({
+var AnimalModelSchema = new Schema({
     user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'user' },
-    registration_number: { type: Number },
-    name: { type: String },
-    address: String,
-    state: { type: String },
-    country: String,
-    email: String,
-    receipt_email: String,
-    phone_no: Number,
+    date_record: { type: Date, default: Date.now },
+    cow_rfid: { type: String },
+    dob: { type: Date, default: Date.now },
+    date_of_acquisition: { type: Date, default: Date.now },
+    purchase_price: Number,
+    weight: Number,
+    conception: String,
     //status: { type: String, default: "active" },
     created_at: { type: Date, default: Date.now }
 }, { versionKey: false });
 
 // Compile model from schema
-var Freight = mongoose.model('freight', FreightModelSchema, 'freight');
+var Animal = mongoose.model('animal', AnimalModelSchema, 'animal');
 
-module.exports = Freight;
+module.exports = Animal;

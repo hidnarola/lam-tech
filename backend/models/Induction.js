@@ -6,7 +6,7 @@ var SALT_WORK_FACTOR = 10;
 //Define a schema
 var Schema = mongoose.Schema;
 
-var PurchaseInstructionModelSchema = new Schema({
+var InductionModelSchema = new Schema({
     user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'user' },
     // date_of_instruction: { type: Date, default: Date.now },
     purchase_contract: { type: String },
@@ -23,10 +23,11 @@ var PurchaseInstructionModelSchema = new Schema({
     shipping_country: String,
     shipping_email: String,
     shipping_phone_no: String,
+    file: String,
     created_at: { type: Date, default: Date.now }
 }, { versionKey: false });
 
 // Compile model from schema
-var PurchaseInstruction = mongoose.model('purchaseInstruction', PurchaseInstructionModelSchema, 'purchaseInstruction');
+var Induction = mongoose.model('induction', InductionModelSchema, 'induction');
 
-module.exports = PurchaseInstruction;
+module.exports = Induction;
