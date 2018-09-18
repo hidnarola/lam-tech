@@ -27,9 +27,9 @@ export class HomeComponent implements OnInit, OnDestroy {
       }
     });
     this.getting_started = this.fb.group({
-      fname : ['', [Validators.required]],
-      lname : ['', [Validators.required]],
-      company_name : ['', [Validators.required]],
+      fname : ['', [Validators.required, this.noWhitespaceValidator]],
+      lname : ['', [Validators.required, this.noWhitespaceValidator]],
+      company_name : ['', [Validators.required, this.noWhitespaceValidator]],
       email : ['', [Validators.required, Validators.email]],
       enquiring_about : ['', [Validators.required]],
       finance_solution : ['', [Validators.required]],
@@ -45,6 +45,13 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  noWhitespaceValidator(control: FormControl) {
+      if(typeof (control.value || '') === 'string' || (control.value || '') instanceof String) {
+        let isWhitespace = (control.value || '').trim().length === 0;
+        let isValid = !isWhitespace;
+        return isValid ? null : { 'whitespace': true }
+      }
+  }
   // Open Getting start modal
   openGettingStartedModal(template) {
     this.getStartModalRef = this.modalService.show(template, {class : 'get-started-popup'});
@@ -55,5 +62,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       ele.scrollIntoView({
         behavior: 'smooth' 
       });
+  }
+
+  // manage getting started
+  addGettingStarted(flag) {
+    this.getting_started_validation = !flag;
   }
 }

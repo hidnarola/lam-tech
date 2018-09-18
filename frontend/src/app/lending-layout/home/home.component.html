@@ -134,70 +134,104 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <form [formGroup]="getting_started">
       <div class="get-started-body d-flex">
         <div class="login-input">
             <label>First Name</label>
-            <input type="text" name="fname" placeholder="First Name">
+            <input type="text" name="fname" formControlName="fname" placeholder="First Name">
+            <div class="cust_err_msg" *ngIf="getting_started_validation && !getting_started.controls['fname'].valid">
+                <span *ngIf="getting_started.controls['fname'].errors['required']" class="text-danger">First name is required.</span>
+                <span *ngIf="!getting_started.controls['fname'].errors['required'] && getting_started.controls['fname'].errors['whitespace']" class="text-danger">Please enter valid data.</span>
+            </div>
         </div>
         <div class="login-input">
             <label>Sur Name</label>
-            <input type="text" name="lname" placeholder="Sur Name">
+            <input type="text" formControlName="lname" name="lname" placeholder="Sur Name">
+            <div class="cust_err_msg" *ngIf="getting_started_validation && !getting_started.controls['lname'].valid">
+              <span *ngIf="getting_started.controls['lname'].errors['required']" class="text-danger">Sur name is required.</span>
+              <span *ngIf="!getting_started.controls['lname'].errors['required'] && getting_started.controls['lname'].errors['whitespace']" class="text-danger">Please enter valid data.</span>
+            </div>
         </div>
 
         <div class="login-input">
             <label>Company Name</label>
-            <input type="text" name="company" placeholder="Company">
+            <input type="text" formControlName="company_name" name="company" placeholder="Company">
+            <div class="cust_err_msg" *ngIf="getting_started_validation && !getting_started.controls['company_name'].valid">
+              <span *ngIf="getting_started.controls['company_name'].errors['required']" class="text-danger">Company name is required.</span>
+              <span *ngIf="!getting_started.controls['company_name'].errors['required'] && getting_started.controls['lname'].errors['whitespace']" class="text-danger">Please enter valid data.</span>
+            </div>
         </div>
         <div class="login-input">
             <label>Email</label>
-            <input type="email" name="email" placeholder="Email">
+            <input type="email" formControlName="email" name="email" placeholder="Email">
+            <div class="cust_err_msg" *ngIf="getting_started_validation && !getting_started.controls['email'].valid">
+              <span *ngIf="getting_started.controls['email'].errors['required']" class="text-danger">Email is required.</span>
+              <span *ngIf="!getting_started.controls['email'].errors['required'] && getting_started.controls['email'].errors['email']" class="text-danger">Please enter valid email.</span>
+              <span *ngIf="!getting_started.controls['email'].errors['required'] && getting_started.controls['email'].errors['whitespace']" class="text-danger">Please enter valid data.</span>
+            </div>
         </div>
 
         <div class="login-input">
             <label>Enquiring about</label>
             <div class="select-wrap">
-              <select name="enquiring_about">
-                <option>Enquiring 01</option>
-                <option>Enquiring 02</option>
-                <option>Enquiring 03</option>
-            </select>
+              <select name="enquiring_about" formControlName="enquiring_about">
+                  <option>Enquiring 01</option>
+                  <option>Enquiring 02</option>
+                  <option>Enquiring 03</option>
+              </select>
+              <div class="cust_err_msg" *ngIf="getting_started_validation && !getting_started.controls['enquiring_about'].valid">
+                <span *ngIf="getting_started.controls['enquiring_about'].errors['required']" class="text-danger">Enquiring about is required.</span>
+                <span *ngIf="!getting_started.controls['enquiring_about'].errors['required'] && getting_started.controls['enquiring_about'].errors['whitespace']" class="text-danger">Please enter valid data.</span>
+              </div>
             </div>
         </div>
         <div class="login-input">
             <label>Finance Solution Required in</label>
             <div class="select-wrap">
-              <select>
+              <select name="finance_solution" formControlName="finance_solution">
                 <option>Finance 01</option>
                 <option>Finance 02</option>
                 <option>Finance 03</option>
               </select>
+              <div class="cust_err_msg" *ngIf="getting_started_validation && !getting_started.controls['enquiring_about'].valid">
+                <span *ngIf="getting_started.controls['enquiring_about'].errors['required']" class="text-danger">Enquiring about is required.</span>
+                <span *ngIf="!getting_started.controls['enquiring_about'].errors['required'] && getting_started.controls['enquiring_about'].errors['whitespace']" class="text-danger">Please enter valid data.</span>
+              </div>
            </div>   
         </div>
 
         <div class="login-input">
             <label>Your Current Sales</label>
             <div class="select-wrap">
-              <select>
+              <select name="current_sale">
                 <option>Sales 01</option>
                 <option>Sales 02</option>
                 <option>Sales 03</option>
               </select>
+              <div class="cust_err_msg" *ngIf="getting_started_validation && !getting_started.controls['current_sale'].valid">
+                <span *ngIf="getting_started.controls['current_sale'].errors['required']" class="text-danger">Current Sales is required.</span>
+                <span *ngIf="!getting_started.controls['current_sale'].errors['required'] && getting_started.controls['current_sale'].errors['whitespace']" class="text-danger">Please enter valid data.</span>
+              </div>
             </div>  
         </div>
         <div class="login-input">
             <label>Your 1-3 year Sales Ambitions</label>
             <div class="select-wrap">
-              <select>
+              <select name="sale_ambition">
                 <option>Sales 01</option>
                 <option>Sales 02</option>
                 <option>Sales 03</option>
               </select>
+              <div class="cust_err_msg" *ngIf="getting_started_validation && !getting_started.controls['sale_ambition'].valid">
+                <span *ngIf="getting_started.controls['sale_ambition'].errors['required']" class="text-danger">Sales Ambitions is required.</span>
+                <span *ngIf="!getting_started.controls['sale_ambition'].errors['required'] && getting_started.controls['sale_ambition'].errors['whitespace']" class="text-danger">Please enter valid data.</span>
+              </div>
             </div>  
         </div>
         <div class="get-started-btn">
-          <button type="">SUBMIT</button>
+          <button type="submit" (click)="addGettingStarted(getting_started.valid)">SUBMIT</button>
         </div>
-
       </div>
+      </form>
   </div>
 </ng-template>

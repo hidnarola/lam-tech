@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CowBankComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log('cow bank is running');
+   }
 
   ngOnInit() {
   }
