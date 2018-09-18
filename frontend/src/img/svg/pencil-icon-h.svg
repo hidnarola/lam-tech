@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.928 13.859">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="pencil-edit-button" transform="translate(0.001 -1.289)">
+    <path id="Path_260" data-name="Path 260" class="cls-1" d="M8.661,3.6l2.833,2.833L4.323,13.607,1.491,10.773Zm4.983-.683L12.381,1.655a1.254,1.254,0,0,0-1.771,0L9.4,2.865,12.232,5.7l1.412-1.412A.966.966,0,0,0,13.644,2.918ZM.008,14.756a.322.322,0,0,0,.39.384l3.157-.765L.724,11.54Z" transform="translate(0 0)"/>
+  </g>
+</svg>
