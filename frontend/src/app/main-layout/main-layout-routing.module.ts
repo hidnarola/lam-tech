@@ -57,6 +57,7 @@ import { fromPromise } from 'rxjs/observable/fromPromise';
                         path : 'cow_setup', component : CowSetupComponent,
                         children : [
                             {path : '', component : CompanyDetailsComponent},
+                            {path : 'company-details', component : CompanyDetailsComponent},
                             {
                                 path : 'company_farms', component : CompanyFarmsComponent,
                                 children : [
@@ -92,6 +93,7 @@ import { fromPromise } from 'rxjs/observable/fromPromise';
                     {
                         path : 'cow_bank', component : CowBankComponent,
                         children : [
+                            {path : 'sales-contract', component : SalesContractComponent},
                             {
                                 path : '', component : SalesContractComponent, 
                                 children : [

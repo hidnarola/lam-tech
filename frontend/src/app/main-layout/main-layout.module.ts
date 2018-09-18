@@ -47,14 +47,15 @@ import { ReportsComponent } from './cow-bank/reports/reports.component';
 import { LivestockPositionComponent } from './cow-bank/reports/livestock-position/livestock-position.component';
 import { DocumentReconciliationComponent } from './cow-bank/reports/document-reconciliation/document-reconciliation.component';
 import { DocumentByAnimalComponent } from './cow-bank/reports/document-by-animal/document-by-animal.component';
-import { BsDropdownModule } from 'ngx-bootstrap';
+import { BsDropdownModule, ModalModule } from 'ngx-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
     LendingLayoutRoutingModule,
     BsDropdownModule,
-    DataTablesModule
+    DataTablesModule,
+    ModalModule.forRoot()
   ],
   declarations: [
     MainLayoutComponent, 
