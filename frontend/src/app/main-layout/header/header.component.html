@@ -1,3 +1,95 @@
-<p>
-  header works!
-</p>
+<header class="header d-flex">
+	<div class="header-l d-flex">
+		<div class="header-logo">
+			<a href="" class="desktop-logo"><img src="img/svg/logo.svg" alt="" /></a>
+			<a href="" class="logo-icon"><img src="img/svg/logo-icon.svg" alt="" /></a>
+		</div>
+		<div class="header-srh">
+			<form class="d-flex">
+				<button><img src="img/svg/search-icon-grey.svg" alt="" /></button>
+				<input type="text" name="" placeholder="SEARCH">
+			</form>
+		</div>
+	</div>
+	<div class="header-r">
+		<div class="d-flex">
+			<div class="header-setting ">
+				<a href="" class="d-flex">
+					<span><img src="img/svg/settings-icon-grey.svg" alt="" /></span>
+					<strong>SYSTEM ADMIN</strong>
+				</a>
+			</div>
+			<div class="mobile-srh">
+				<input type="text" name="" placeholder="SEARCH">
+				<button><img src="img/svg/search-icon-grey.svg" alt="" /></button>
+			</div>
+
+			<div class="header-alert" dropdown>
+				<a href="javascript:;" id="button-basic" dropdownToggle aria-controls="dropdown-basic">
+					<img src="img/svg/notification-icon-grey.svg" alt="" /> 
+				</a>
+				<div id="dropdown-basic" *dropdownMenu class="dropdown-menu notification-dropdown dropdown-menu-right" role="menu" aria-labelledby="button-basic">
+				    <div class="d-flex">
+				    	<h3>NOTIFICATIONS</h3> <a href="">CLEAR ALL</a>
+				    </div>
+				    <ul>
+				    	<li>
+				    		<div class="notification-dropdown-li">
+				    			<h4>LOREM IPSUM	</h4>
+				    			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				    		</div>
+				    	</li>
+				    	<li>
+				    		<div class="notification-dropdown-li">
+				    			<h4>LOREM IPSUM	</h4>
+				    			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				    		</div>
+				    	</li>
+				    	<li>
+				    		<div class="notification-dropdown-li">
+				    			<h4>LOREM IPSUM	</h4>
+				    			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				    		</div>
+				    	</li>
+				    	<li>
+				    		<div class="notification-dropdown-li">
+				    			<h4>LOREM IPSUM	</h4>
+				    			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				    		</div>
+				    	</li>
+				    </ul>
+				</div>
+			</div>
+			<div class="header-user" dropdown>
+				<a href="javascript:;" id="button-basic" dropdownToggle aria-controls="dropdown-basic">
+					<img src="img/user-profile.png" alt="" />
+				</a>
+				<div id="dropdown-basic" *dropdownMenu class="dropdown-menu user-dropdown dropdown-menu-right" role="menu" aria-labelledby="button-basic">
+					<div class="user-dropdown-hdr">
+						<span><img src="img/user-profile-big.png" alt="" /></span>
+						<strong>Lorem Ipsum</strong>
+					</div>
+					<div class="user-dropdown-body">
+						<div class="logged-as">
+							<h5>Logged AS</h5>
+							<div class="" dropdown>
+								<h6 id="button-basic" dropdownToggle aria-controls="dropdown-basic">Administrator</h6>
+								<div id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+									<ul>
+										<li><a href="">Administrator 01</a></li>
+										<li><a href="">Administrator 02</a></li>
+										<li><a href="">Administrator 03</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<button class="btn-css green-btn-bdr">LOGOUT</button>
+					</div>
+				</div> 
+			</div>
+			<div class="mobile-nav">
+				<span></span>
+			</div>
+		</div>	
+	</div>
+</header>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DataTablesModule } from 'angular-datatables';
 import { MainLayoutComponent } from './main-layout.component';
 import { HeaderComponent } from './header/header.component';
 import { SiderbarComponent } from './siderbar/siderbar.component';
@@ -46,11 +47,14 @@ import { ReportsComponent } from './cow-bank/reports/reports.component';
 import { LivestockPositionComponent } from './cow-bank/reports/livestock-position/livestock-position.component';
 import { DocumentReconciliationComponent } from './cow-bank/reports/document-reconciliation/document-reconciliation.component';
 import { DocumentByAnimalComponent } from './cow-bank/reports/document-by-animal/document-by-animal.component';
+import { BsDropdownModule } from 'ngx-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
-    LendingLayoutRoutingModule
+    LendingLayoutRoutingModule,
+    BsDropdownModule,
+    DataTablesModule
   ],
   declarations: [
     MainLayoutComponent, 

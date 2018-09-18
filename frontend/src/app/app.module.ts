@@ -9,6 +9,7 @@ import { RegisterModule } from './register/register.module';
 import { ForgetPasswordModule } from './forget-password/forget-password.module';
 import { OverviewModule } from './overview/overview.module';
 import { MainLayoutModule } from './main-layout/main-layout.module';
+import { DataTablesModule } from 'angular-datatables';
 
 // load service
 import { MessageService } from './shared/message.service';
@@ -25,6 +26,7 @@ import { MessageService } from './shared/message.service';
     RegisterModule,
     ForgetPasswordModule,
     OverviewModule,
+    DataTablesModule,
     RouterModule.forRoot([])
   ],
   providers: [MessageService],

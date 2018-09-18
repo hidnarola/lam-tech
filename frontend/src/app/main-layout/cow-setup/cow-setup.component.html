@@ -1,11 +1,16 @@
-<div>
-  <ul>
-    <li><a href="javascript:;" routerLink="/dashboard/cow_setup/company_details">Company Details</a></li>
-    <li><a href="javascript:;" routerLink="/dashboard/cow_setup/company_farms">Our Company Farms</a></li>
-    <li><a href="javascript:;" routerLink="/dashboard/cow_setup/contract_farms">Our Contract Farms</a></li>
-    <li><a href="javascript:;" routerLink="/dashboard/cow_setup/customers">Our Customers</a></li>
-    <li><a href="javascript:;" routerLink="/dashboard/cow_setup/livestock_agents">Our Livestock Agents</a></li>
-    <li><a href="javascript:;" routerLink="/dashboard/cow_setup/freight_companies">Our Freight Companies</a></li>
-  </ul>
+<div class="content-wrap">
+	<div class="content-wrap-inr">
+		<div class="content-title"><h2>Cow Set Up</h2></div>
+		<div class="pages-link full-bdr-btm">
+			<ul class="d-flex">
+			    <li><a href="javascript:;" routerLink="/dashboard/cow_setup">Company Details</a></li>
+			    <li><a href="javascript:;" routerLink="/dashboard/cow_setup/company_farms">Our Company Farms</a></li>
+			    <li><a href="javascript:;" routerLink="/dashboard/cow_setup/contract_farms">Our Contract Farms</a></li>
+			    <li><a href="javascript:;" routerLink="/dashboard/cow_setup/customers">Our Customers</a></li>
+			    <li><a href="javascript:;" routerLink="/dashboard/cow_setup/livestock_agents">Our Livestock Agents</a></li>
+				<li><a href="javascript:;" routerLink="/dashboard/cow_setup/freight_companies">Our Freight Companies</a></li>
+			</ul>
+		</div>
+		<router-outlet></router-outlet>
+	</div>	
 </div>
-<router-outlet></router-outlet>

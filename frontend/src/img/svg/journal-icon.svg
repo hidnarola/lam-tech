@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18.652">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #93b0bf;
+      }
+    </style>
+  </defs>
+  <g id="newspaper" transform="translate(0 -17.247)">
+    <g id="Group_10" data-name="Group 10" transform="translate(7.952 22.214)">
+      <g id="Group_9" data-name="Group 9" transform="translate(0 0)">
+        <path id="Path_8" data-name="Path 8" class="cls-1" d="M209.342,144.4h-4.967a.793.793,0,0,0,0,1.585h4.967a.793.793,0,0,0,0-1.585Z" transform="translate(-203.582 -144.402)"/>
+      </g>
+    </g>
+    <g id="Group_12" data-name="Group 12" transform="translate(7.952 26.045)">
+      <g id="Group_11" data-name="Group 11" transform="translate(0 0)">
+        <path id="Path_9" data-name="Path 9" class="cls-1" d="M211.244,242.473h-6.869a.793.793,0,0,0,0,1.585h6.869a.793.793,0,1,0,0-1.585Z" transform="translate(-203.582 -242.473)"/>
+      </g>
+    </g>
+    <g id="Group_14" data-name="Group 14" transform="translate(0 17.247)">
+      <g id="Group_13" data-name="Group 13" transform="translate(0 0)">
+        <path id="Path_10" data-name="Path 10" class="cls-1" d="M19.207,17.247H5.178a.793.793,0,0,0-.793.793v7.477h-1.4A2.989,2.989,0,0,0,0,28.5v4.412a2.986,2.986,0,0,0,3.383,2.959H16.46A3.544,3.544,0,0,0,20,32.333V18.04A.793.793,0,0,0,19.207,17.247ZM4.386,32.914a1.4,1.4,0,0,1-1.129,1.374H2.986v.026a1.4,1.4,0,0,1-1.4-1.4V28.5a1.4,1.4,0,0,1,1.4-1.4h1.4v5.812Zm14.029-.581a1.981,1.981,0,0,1-1.955,1.955H5.636a2.966,2.966,0,0,0,.335-1.374V18.832H18.415v13.5Z" transform="translate(0 -17.247)"/>
+      </g>
+    </g>
+    <g id="Group_16" data-name="Group 16" transform="translate(7.952 29.638)">
+      <g id="Group_15" data-name="Group 15">
+        <path id="Path_11" data-name="Path 11" class="cls-1" d="M209.342,334.464h-4.967a.793.793,0,0,0,0,1.585h4.967a.793.793,0,0,0,0-1.585Z" transform="translate(-203.582 -334.464)"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -60,15 +60,15 @@ import { fromPromise } from 'rxjs/observable/fromPromise';
                             {
                                 path : 'company_farms', component : CompanyFarmsComponent,
                                 children : [
-                                    {path : '', component : ContractListComponent},     
-                                    {path : 'add', component : ContractAddComponent}     
+                                    {path : '', component : ListComponent},     
+                                    {path : 'add', component : AddComponent }     
                                 ]
                             },
                             {
                                 path : 'contract_farms', component : ContractFarmsComponent,
                                 children : [
-                                    {path : '', component : ListComponent},     
-                                    {path : 'add', component : AddComponent}     
+                                    {path : '', component : ContractListComponent },     
+                                    {path : 'add', component : ContractAddComponent }     
                                 ]
                                 
                             },
