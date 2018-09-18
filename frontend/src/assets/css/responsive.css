@@ -27,13 +27,21 @@
 
 }
 
+@media(max-width:1024px){
+	.datatable-wrap{ width:100%; overflow:auto; padding:5px 0 15px; }
+	.row-border.dataTable {min-width:1024px;}
+	.datatable-wrap table.dataTable.row-border thead tr th{ padding:10px;}
+	.datatable-wrap table.dataTable.row-border tbody tr td{ padding:10px;}
+	.pages-link{padding:0 0 10px;} 
+	.pages-link ul {white-space:nowrap; overflow-x:auto; padding:0 0 10px;}
+
+}
 @media(min-width:992px) and (max-width:1024px){
 	.avout-l {width:60%;}
 	.avout-r{width:40%;}
 	.login-wrap-inr {padding:0 30px 0 60px; height:100%;}
 	.login-wrap-inr-l {width:500px; padding:40px;}
 	.login-wrap-inr-r {width: calc(100% - 500px); padding-left:50px;}
-
 	
 }
 
@@ -163,7 +171,7 @@ section#about-section {margin:0;}
 .logo-icon{ display:block;}
 .side-menu{ display:none;}
 .content-wrap {padding:80px 15px 15px;}
-.header {padding:12px 15px;}
+.header {padding:12px 15px; height:auto;}
 .header-srh{ display:none;}
 .header-l {height: auto;}
 .header-logo a img {width:auto; height:30px;}
@@ -173,10 +181,10 @@ section#about-section {margin:0;}
 .header-alert {margin:0 30px 0 0;}
 .header-user{ display:none;}
 .pages-link ul {white-space: nowrap; overflow: auto; padding: 0 0 15px;}
-.pages-link {padding:0; margin:0 0 20px;}
+.pages-link {padding:0; margin:0;}
 .two-column-li ul {margin:0;}
 .two-column-li ul li {width: 100%;padding: 0 0 10px;}
-.form-btn {margin: 50px 0 0;}
+.form-btn {margin:15px 0;}
 .mobile-nav{ position:relative;}
 .mobile-nav span{ width:20px; height:3px; background:#839269; position:relative; display:block;}
 .mobile-nav span:before{content:'';width:30px; height:3px; position:absolute; top:-7px; right:0; background:#839269;}
@@ -185,7 +193,7 @@ section#about-section {margin:0;}
 .open-nav .side-menu ul { list-style: none; padding:10px 0 15px 0; overflow:auto; height:auto; max-width:320px; margin:0 auto 20px; border-top: 1px solid #39597c; border-bottom: 1px solid #39597c;}
 .open-nav .side-menu ul li a {padding:12px 20px; font-weight:500; }
 .open-nav .side-menu ul li.active a,
-.open-nav .side-menu ul li:hover a {border-left: 3px solid transparent; text-decoration: none; border-radius:6px;}
+.open-nav .side-menu ul li:hover a {border-left:3px solid transparent; text-decoration:none; border-radius:6px;}
 
 .mobile-logout{display:block;}
 .mobile-logout button{border: 1px solid rgba(171, 175, 192,.5); max-width: 320px; margin: 0 auto; background: #fff;color: #333;}
@@ -194,5 +202,20 @@ section#about-section {margin:0;}
 .mobile-nav-profile strong{ color:#fff; text-transform:uppercase; font-weight:700; } 
 .close-sidebar{ display:block; position:absolute; top:10px; right:20px;}
 .close-sidebar .close {float:right; font-size:30px; font-weight:400; color:#fff; text-shadow:none; opacity:1; line-height:100%;}
+.edit-add-option-l button.edit-btn {padding:10px; width:40px;}
+.edit-add-option-l button.edit-btn span { position:relative; top:0; left:0; transform:initial; background-size:14px; width:14px; height:14px; margin:0 auto;}
+.edit-add-option-l button.edit-btn strong{ font-size:0;}
+.header:after {width: 100%;}
+.title-back-btn{ flex-wrap:wrap; }
+.title-back-btn-l h3 {font-size:18px; margin:0 0 10px;}
+.title-back-btn {margin:15px 0;}
+.add-another-location button{max-width:100%;}
+.datatable-wrap table.dataTable.no-footer {margin: 0;}
+.dataTables_wrapper .dataTables_paginate {float: none;text-align: center;padding: 0;width: 100%;}
+.content-title h2 {line-height: normal; font-size: 20px;}
+.edit-add-option-r .btn-css {padding:5px 20px 6px; min-width:initial;}
+.form-information + .form-information {margin-top:20px;}
+.full-bdr-btm:before {width: calc(100% + 30px); left:-15px;}
+
 
 }

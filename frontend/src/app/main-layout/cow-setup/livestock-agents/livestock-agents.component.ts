@@ -16,6 +16,6 @@ export class LivestockAgentsComponent implements OnInit {
 
   // Open Getting start modal
   openAddAgentModal(template) {
-    this.inviteAgentModalRef = this.modalService.show(template, {class : 'get-started-popup', backdrop : true});
+    this.inviteAgentModalRef = this.modalService.show(template, {class : 'invite-agent-popup-wrap', backdrop : true});
   }
 }
