@@ -4,6 +4,7 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { Subscription } from 'rxjs/Subscription';
 import { MessageService } from '../../shared/message.service';
+import { HomeService } from './home.service';
 
 @Component({
   selector: 'app-home',
@@ -16,10 +17,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   // Getting started form validation
   getting_started : FormGroup;
   getting_started_validation : boolean = false;
+  country_list : any = [];
+  userdata : any = {};
   constructor(
     private modalService: BsModalService, 
     private MessageService : MessageService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private HomeService : HomeService
   ) { 
     this.subscription = this.MessageService.getMessage().subscribe((response) => {
       if(response && response['type'] == 'scroll') {
@@ -39,6 +43,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.getAllCountry();
   }
 
   ngOnDestroy() {
@@ -54,7 +59,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
   // Open Getting start modal
   openGettingStartedModal(template) {
-    this.getStartModalRef = this.modalService.show(template, {class : 'get-started-popup'});
+    this.userdata = {};
+    this.getting_started_validation = false;
+    this.getStartModalRef = this.modalService.show(template, {class : 'get-started-popup', backdrop : true});
   }
   // Scroll to div
   scroll(el) {
@@ -66,6 +73,19 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   // manage getting started
   addGettingStarted(flag) {
+    if(flag) {
+      this.HomeService.addUserInterest(this.userdata).subscribe((response) => {
+        this.getStartModalRef.hide();
+      });
+    }
     this.getting_started_validation = !flag;
+  }
+
+  // Get all country
+  getAllCountry() {
+    this.HomeService.getAllCountry().subscribe((response) => {
+      this.country_list = response['data'];
+      console.log(this.country_list);
+    });
   }
 }
