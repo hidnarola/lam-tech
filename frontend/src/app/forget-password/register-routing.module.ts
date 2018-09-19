@@ -5,7 +5,7 @@ import { ForgetPasswordComponent } from './forget-password.component';
 @NgModule({
   imports: [
     RouterModule.forChild([
-      { path: 'forget_password', component: ForgetPasswordComponent }
+      { path: 'forget-password', component: ForgetPasswordComponent }
     ])
   ],
   exports: [RouterModule]
