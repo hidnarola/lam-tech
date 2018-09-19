@@ -47,7 +47,12 @@ import { ReportsComponent } from './cow-bank/reports/reports.component';
 import { LivestockPositionComponent } from './cow-bank/reports/livestock-position/livestock-position.component';
 import { DocumentReconciliationComponent } from './cow-bank/reports/document-reconciliation/document-reconciliation.component';
 import { DocumentByAnimalComponent } from './cow-bank/reports/document-by-animal/document-by-animal.component';
-import { BsDropdownModule, ModalModule, AccordionModule  } from 'ngx-bootstrap';
+import { 
+        BsDropdownModule, 
+        ModalModule, 
+        AccordionModule,
+        BsDatepickerModule  
+ } from 'ngx-bootstrap';
 
 @NgModule({
   imports: [
@@ -56,7 +61,8 @@ import { BsDropdownModule, ModalModule, AccordionModule  } from 'ngx-bootstrap';
     BsDropdownModule,
     DataTablesModule,
     ModalModule.forRoot(),
-    AccordionModule.forRoot()
+    AccordionModule.forRoot(),
+    BsDatepickerModule.forRoot()
   ],
   declarations: [
     MainLayoutComponent, 

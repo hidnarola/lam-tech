@@ -117,6 +117,7 @@ section#about-section {margin:0 0 95px; z-index:10; position:relative;}
 .login-input{ border:1px solid #F6F6F6; padding:10px 23px; position:relative; background:#fff; }
 .login-input label{ color:#6E717D; font-size:13px; line-height:15px; display:block; margin:0 0 6px; padding:0;}
 .login-input input{ border:0; background:transparent; line-height:17px; color:#323B61; font-size:13px; font-weight:600; width:100%;}
+.login-input textarea{ border:0; background:transparent; line-height:17px; color:#323B61; font-size:13px; font-weight:600; width:100%; height:100px; resize:none;}
 
 .login-checkbox{ margin:39px 0 44px;}
 .login-checkbox label{ color:#ABAFC0; font-size:11px; line-height:15px; font-weight:400; letter-spacing:0.05em; margin:0;vertical-align:top;}
@@ -350,14 +351,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c5572', end
 .pages-link ul li.active a,
 .pages-link ul li a:hover{ color:#323B61; border-bottom:2px solid #323B61;}
 
-.form-information + .form-information{ margin-top:41px;}
+.form-information + .form-information{ margin-top:31px;}
 .form-information-title{ margin:0 0 30px;  padding:0;}
 .form-information-title h3{margin:0; padding:0; color:#6E717D; font-size:12px; text-transform:uppercase; display:block; letter-spacing:0.05em; font-weight:700;}
+.form-information-title h3 + h3{ margin-top:21px;}
 .btm-margin{ margin-bottom:10px;}
 
 .column-ul-li ul{ margin:0 -10px; padding:0; list-style:none; flex-wrap:wrap;}
 .column-ul-li li{ width:100%; padding:0 10px 10px;}
 .two-column-li ul li{ width:50%;}
+.two-column-li ul li ul li{ padding-bottom:0;}
 .three-column-li ul li{ width:33.33%;}
 
 .form-btn{ margin:100px 0 30px;}
@@ -422,3 +425,114 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a5370', end
 .invite-agent-popup-wrap .modal-content {border:0; border-radius:8px; padding:40px 80px;}
 .invite-agent-popup-wrap .modal-body{ padding:0;}
 .invite-agent-popup-wrap .get-started-head button {top:-7px; right:-32px; opacity:1;}
+
+.price-checkbox ul{ list-style:none; margin:0; padding:0;}
+.price-checkbox ul li h4{ margin:0 0 9px; padding:0; color:#6E717D; font-size:11px; letter-spacing:0.05em; display:block; line-height:15px; min-height:15px;}
+.price-checkbox ul li{ margin:0 100px 0 0; }
+.according-wrap .card{ border:0; border-radius:0; margin:0; padding:0; background:transparent; }
+.according-wrap .card-header { padding:0; margin:0; background-color:transparent; border-bottom:0; border-radius:0 !important;}
+
+.according-wrap .panel + .panel { margin-top:41px;}
+.according-wrap .panel-title .accordion-toggle{ color:#839269; font-size:16px; font-weight:700; display:block; line-height:21px; margin:0; padding:0 0 14px; text-decoration:none; background:url('img/svg/plus.svg') no-repeat right 0 / 18px; border-bottom:1px solid #F1F1F1; cursor:pointer;}
+.according-wrap .panel-open .panel-title .accordion-toggle{ background:url('img/svg/substract.svg') no-repeat right 0 / 18px;}
+.according-wrap .card-body{ padding:0; margin:28px 0 0;}
+
+.calendar-wrap{ position:relative; padding:0 44px 0 0;}
+.calendar-wrap input{ width:100%;}
+.calendar-wrap>i{ background:url('img/svg/calendar.svg') no-repeat 0 0; width:16px; height:16px; position:absolute; top:50%; right:0; transform:translateY(-50%);}
+.price-checkbox {padding:0 0 0 30px;}
+.price-checkbox .checkbox label {color: #323B61; font-weight: 600; font-size:13px; }
+
+.custom-column-ul ul{ list-style:none; margin:0; padding:0; flex-wrap:wrap; align-items:center;}
+.custom-column-ul ul li{ width:calc(50% - 38px); padding-bottom:10px; text-align:left;}
+.custom-column-ul ul li:nth-child(3n+2){ width:76px; text-align:center;}
+.or-option{ color:#323B61; font-size:13px; font-weight:600; display:block;}
+.custom-column-ul ul ul li{ width:50% !important; padding-bottom:0;}
+.custom-column-ul ul ul li:nth-child(1){ margin-left:auto; padding-right:13px; }
+.custom-column-ul ul ul li:nth-child(2){ margin-left:auto; padding-left:13px; text-align:left;}
+.qietion-icon{ background:url('img/svg/quetion-icon.svg') no-repeat 0 0 / 15px; width:15px; height:16px; margin:0 0 0 15px;}
+
+.custom-quantity-ul ul{ list-style:none; margin:0; padding:0 0 10px; align-items:center; }
+.custom-quantity-ul ul>li{ width:50%;}
+.custom-quantity-ul>ul>li:nth-child(1){width:calc(50% - 72px);}
+.custom-quantity-ul>ul>li:nth-child(2){width:82px; color:#323B61; font-size:13px; font-weight:600; text-align:center; }
+.custom-quantity-ul>ul>li:nth-child(3){ margin-left:auto; width:calc(50% - 10px); }
+.custom-quantity-ul ul ul li:nth-child(1){ padding-right:10px;}
+.custom-quantity-ul ul ul li:nth-child(2){ padding-left:10px;}
+
+.custom-quantity-ul-btm ul{list-style:none; margin:0; padding:0; align-items:center;}
+.custom-quantity-ul-btm ul li h6{ margin:0; padding:0; text-align:left; color:#323B61; font-size:13px; font-weight:600;}
+.custom-quantity-ul-btm ul li{ width:150px;}
+.custom-quantity-ul-btm ul li:nth-child(1){ width:14%; }
+.custom-quantity-ul-btm ul li:nth-child(2){ width:40%;}
+.custom-quantity-ul-btm ul li:nth-child(3){ width:6%; }
+.custom-quantity-ul-btm ul li:nth-child(3) h6{text-align:center;}
+.custom-quantity-ul-btm ul li:nth-child(4){ width:40%;}
+
+.custom-tolerances-ul ul{ margin:0; padding:0; list-style:none; align-items:center;}
+.custom-tolerances-ul>ul>li:nth-child(1){width:50%; padding-right:10px; }
+.custom-tolerances-ul>ul>li:nth-child(2){width:50%; padding-left:10px;}
+.custom-tolerances-ul>ul ul li:nth-child(1){ width:calc(50% - 35px);}
+.custom-tolerances-ul>ul ul li:nth-child(2){ width:70px; text-align:center; color:#323B61; font-size:13px; font-weight:600;  }
+.custom-tolerances-ul>ul ul li:nth-child(3){ width:calc(50% - 35px);}
+
+.agency-checkbox ul{ margin:0; padding:0 0 0 30px; list-style:none; align-items:center;}
+.agency-checkbox>ul>li{ width:50%; }
+.agency-checkbox ul>ul>li{ padding:0 100px 0 0;}
+.agency-checkbox ul h5{ margin:0 0 9px;padding: 0; color: #6E717D; font-size: 11px; letter-spacing: 0.05em; display: block; line-height: 15px; min-height: 15px;}
+.contract-type ul{ list-style:none; margin:0; padding:0;}
+.contract-type ul li{ width:25%; padding-left:20px; max-width:245px; align-items:center; }
+.contract-type ul li:nth-child(1),
+.contract-type ul li:nth-child(2){ max-width:150px;}
+.adjusment-table ul{ margin:0;}
+.adjusment-table ul li{ height:87px; display:-ms-flexbox!important; display:-webkit-box!important; display:flex!important;}
+.adjusment-table ul li + li{ margin-top:5px; }
+.adjusment-table ul li > div{ background:#fff;  height:100%; display:-ms-flexbox!important; display:-webkit-box!important; display:flex!important; align-items:flex-end; padding:16px 38px;}
+.adjusment-table ul li h5{ margin:0; padding:0; position:absolute; top:8px; left:32px; color:#839269; font-size:10px; font-weight:700; letter-spacing:.05em; display:block; line-height:14px;} 
+.adjusment-label{  width:65%; position:relative;}
+.adjusment-label label{ color:#323B61; font-size:12px; font-weight:600; line-height:16px; margin:0;}
+.adjusment-input{ width:calc(35% - 5px); margin-left:5px; position:relative;}
+.adjusment-input input{ border:0; background:transparent; color:#323B61; font-size:12px; font-weight:600; width:100%; line-height:16px; padding-top:39px;}
+
+.trade-rule-top{ background:#AAB1CC; padding:30px 34px; font-size:13px; font-weight:600; line-height: 26px; display:block; margin:0 0 41px; color:#fff;}
+.trade-rule-btm ul{ list-style:none; margin:0; padding:0;}
+.trade-rule-btm ul li{ width:calc(50% - 12px);}
+.trade-rule-btm ul li:nth-child(2){ margin-left:auto;}
+
+.pdf-div{ background:#fff; padding:36px 25px; align-items:center;border-radius: 8px;}
+.pdf-div i{ background:url('img/svg/pdf-icon.svg') no-repeat 0 0; width:27px; height:30px;}
+.pdf-div strong{ color:#323B61; font-size:13px; font-weight:600; padding-left:35px;}
+
+.country-trade h5{ color:#6E717D; font-size:12px; font-weight:700; letter-spacing:0.05em; margin:0 0 27px; padding:0;}
+.country-trade ul{ list-style:none; margin:0; padding:0;}
+.country-trade ul li{display:-ms-flexbox!important; display:-webkit-box!important; display:flex!important; align-items:center; height:60px; background:#fff; border-radius:8px;     padding: 0 0 0 31px;}
+.radiobox-inr{ position:relative;}
+
+.radiobox label{ color:#323B61; font-size:13px; font-weight:600; line-height:14px; padding:0 0 0 40px; margin:0; width:100%; height:100%; vertical-align:top;}
+.radiobox label:before{content: ""; width:14px; height:14px; position:absolute; left:0; top:0; background-color:#fff; border:1px solid #ABAFC0; border-radius:80px; margin:0;}
+.radiobox input[type=radio]:checked + label:before { content:""; color:#000; font-size:30px; text-align: center; line-height:12px;}
+.radiobox input[type=radio]:checked + label:after{ content:''; width:8px; height:8px; background:#000; position:absolute; top:50%; border-radius: 100px; transform:translateY(-50%); left:4px; margin-top: -1px;}
+
+.contact-textarea{ background:#fff; border-radius:8px; padding:10px 28px; height:190px;} 
+.contact-textarea textarea{ background:#fff; border:0; width:100%;  height:100%; resize:none; color:#6E717D; font-size:11px; letter-spacing:0.05em; }
+
+.digital-signature{ background:#ABAFC0; padding:10px 28px; border-radius:2px; color:#FFF; font-size:11px; line-height:15px; letter-spacing:.05em; height:100px;}
+
+.dtl-wrap-ul ul{ margin:0; padding:0; list-style:none; flex-wrap:wrap; align-items:center; }
+.dtl-wrap-ul> ul> li{ padding:0 5px 10px; width:50%;}
+.dtl-wrap-ul> ul> li >ul li:nth-child(1),
+.dtl-wrap-ul> ul> li >ul li:nth-child(3){ width:calc(50% - 28px);}
+.dtl-wrap-ul> ul> li >ul li:nth-child(2){ width:56px; text-align:center; color:#323B61; font-size:13px; font-weight:600; }
+.order-fullfillemnt{ margin-bottom:41px;}
+
+.upload-buyer{ width:50%; padding:41px 10px 41px 0; align-items:center;}
+.upload-buyer label{ color:#6E717D; font-size:10px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;}
+.upload-buyer button{ margin-left:auto; width:248px;}
+
+.imported-purchase{ margin:0 0 50px;}
+.imported-purchase ul{ list-style:none; margin:0; padding:0; flex-wrap:wrap;}
+.imported-purchase ul li{ width:calc(20% - 5px); background:#fff; min-height:87px; padding:8px 0 15px 32px; margin:0 5px 5px 0;}
+.imported-purchase ul li label{ margin:0; padding:0; color:#839269; font-size:10px; font-weight:700; letter-spacing:.05em; line-height:14px; display:block;}
+.imported-purchase ul li input{ color:#323B61; font-size:16px; font-weight:600; padding:30px 0 0; line-height:20px; border:0; background:transparent;}
+.imported-purchase ul li.imported-purchase-small label{ font-size:8px; }
+.imported-purchase ul li.imported-purchase-small input{ font-size:12px; }

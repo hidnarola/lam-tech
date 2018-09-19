@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 15">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #abafc0;
+      }
+    </style>
+  </defs>
+  <path id="Icon" class="cls-1" d="M6-9v-1H7v1ZM9-3V-4h1v1Zm3-6v-1h1v1ZM9-9v-1h1v1ZM6-7V-8H7v1ZM3-7V-8H4v1Zm9,0V-8h1v1ZM9-7V-8h1v1ZM6-5V-6H7v1ZM3-5V-6H4v1Zm9,0V-6h1v1ZM9-5V-6h1v1ZM6-3V-4H7v1ZM3-3V-4H4v1ZM13-15h3V-1H0V-15H3v-1H4v1h8v-1h1ZM3-14H1v2H15v-2H13v1H12v-1H4v1H3ZM1-2H15v-9H1Z" transform="translate(0 16)"/>
+</svg>
