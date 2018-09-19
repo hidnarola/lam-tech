@@ -48,6 +48,10 @@ import { LivestockPositionComponent } from './cow-bank/reports/livestock-positio
 import { DocumentReconciliationComponent } from './cow-bank/reports/document-reconciliation/document-reconciliation.component';
 import { DocumentByAnimalComponent } from './cow-bank/reports/document-by-animal/document-by-animal.component';
 import { BsDropdownModule, ModalModule, AccordionModule  } from 'ngx-bootstrap';
+import { CowCloudComponent } from './cow-cloud/cow-cloud.component';
+import { CowCloudListComponent } from './cow-cloud/cow-cloud-list/cow-cloud-list.component';
+import { CowSummaryComponent } from './cow-cloud/cow-summary/cow-summary.component';
+import { CowProfileComponent } from './cow-cloud/cow-profile/cow-profile.component';
 
 @NgModule({
   imports: [
@@ -103,7 +107,11 @@ import { BsDropdownModule, ModalModule, AccordionModule  } from 'ngx-bootstrap';
     ReportsComponent,
     LivestockPositionComponent,
     DocumentReconciliationComponent,
-    DocumentByAnimalComponent
+    DocumentByAnimalComponent,
+    CowCloudComponent,
+    CowCloudListComponent,
+    CowSummaryComponent,
+    CowProfileComponent
   ]
 })
 export class MainLayoutModule { }

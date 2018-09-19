@@ -45,6 +45,12 @@ import { ReportsComponent } from './cow-bank/reports/reports.component';
 import { LivestockPositionComponent } from './cow-bank/reports/livestock-position/livestock-position.component';
 import { DocumentReconciliationComponent } from './cow-bank/reports/document-reconciliation/document-reconciliation.component';
 import { DocumentByAnimalComponent } from './cow-bank/reports/document-by-animal/document-by-animal.component';
+
+// Cow cloud
+import { CowCloudComponent } from './cow-cloud/cow-cloud.component';
+import { CowCloudListComponent } from './cow-cloud/cow-cloud-list/cow-cloud-list.component';
+import { CowSummaryComponent } from './cow-cloud/cow-summary/cow-summary.component';
+import { CowProfileComponent } from './cow-cloud/cow-profile/cow-profile.component';
 import { fromPromise } from 'rxjs/observable/fromPromise';
 
 @NgModule({
@@ -149,6 +155,14 @@ import { fromPromise } from 'rxjs/observable/fromPromise';
 
                                 ]
                             }
+                        ]
+                    },
+                    {
+                        path : 'cow-cloud', component: CowCloudComponent,
+                        children : [
+                            {path : '', component : CowCloudListComponent},
+                            {path : 'cow-summary', component : CowSummaryComponent},
+                            {path : 'cow-profile', component : CowProfileComponent}
                         ]
                     }
                 ]
