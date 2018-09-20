@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 @Injectable()
-
-export class CowSetupService {
-
-  private api_host: any = environment.API_URL;
+export class CowBankService {
+  private api_host : any = environment.API_URL;
   constructor(private http: HttpClient) { }
 
   private headers = new Headers();
+ 
+  // get(data : any) {
+  //   return this.http.post(`${this.api_host}login`, data);
+  // }
 
   get(apiUrl) {
     const url = this.api_host + apiUrl;
@@ -22,17 +24,5 @@ export class CowSetupService {
     }
     // Begin assigning parameters
     return this.http.get(url, { params: Params });
-  }
-  // save company details
-  saveCompanyDetails(data: any) {
-    return this.http.put(`${this.api_host}company`, data);
-  }
-  // Get all country
-  getAllCountry() {
-    return this.http.get(`${this.api_host}country`);
-  }
-  // get company detail
-  getCompanyDetails() {
-    return this.http.get(`${this.api_host}company`);
   }
 }

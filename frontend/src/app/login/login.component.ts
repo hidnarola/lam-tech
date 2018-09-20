@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
             refresh_token: response['refresh_token'],
             token: response['token'],
           };
-          localStorage.setItem('user', this.userdata);
+          localStorage.setItem('user', JSON.stringify(this.userdata));
           this.toastr.success('', 'Login Successfully done!', { timeOut: 3000 });
           this.router.navigate(['/overview']);
         } else {

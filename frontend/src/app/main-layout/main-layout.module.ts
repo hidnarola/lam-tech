@@ -8,7 +8,6 @@ import { HeaderComponent } from './header/header.component';
 import { SiderbarComponent } from './siderbar/siderbar.component';
 import { LendingLayoutRoutingModule } from './main-layout-routing.module';
 import { CowSetupComponent } from './cow-setup/cow-setup.component';
-import { CompanySetupService } from './cow-setup/cow-setup.service';
 import { CompanyDetailsComponent } from './cow-setup/company-details/company-details.component';
 import { CompanyFarmsComponent } from './cow-setup/company-farms/company-farms.component';
 import { ContractFarmsComponent } from './cow-setup/contract-farms/contract-farms.component';
@@ -51,12 +50,12 @@ import { LivestockPositionComponent } from './cow-bank/reports/livestock-positio
 import { DocumentReconciliationComponent } from './cow-bank/reports/document-reconciliation/document-reconciliation.component';
 import { DocumentByAnimalComponent } from './cow-bank/reports/document-by-animal/document-by-animal.component';
 
-import { 
-        BsDropdownModule, 
-        ModalModule, 
-        AccordionModule,
-        BsDatepickerModule  
- } from 'ngx-bootstrap';
+import {
+  BsDropdownModule,
+  ModalModule,
+  AccordionModule,
+  BsDatepickerModule
+} from 'ngx-bootstrap';
 
 import { CowCloudComponent } from './cow-cloud/cow-cloud.component';
 import { CowCloudListComponent } from './cow-cloud/cow-cloud-list/cow-cloud-list.component';
@@ -70,13 +69,18 @@ import { FinancialManagementComponent } from './cow-pliance/financial-management
 import { AgriculturePracticesComponent } from './cow-pliance/agriculture-practices/agriculture-practices.component';
 import { BioSecurityComponent } from './cow-pliance/bio-security/bio-security.component';
 import { SupplierManagementComponent } from './cow-pliance/supplier-management/supplier-management.component';
+import { TokenInterceptor } from '../shared/token.interceptor';
 
+//Load services
+import { CowBankService } from './cow-bank/cow-bank.service';
+import { CowSetupService } from './cow-setup/cow-setup.service';
 
 @NgModule({
   imports: [
     CommonModule,
     LendingLayoutRoutingModule,
     BsDropdownModule,
+    HttpClientModule,
     DataTablesModule,
     ModalModule.forRoot(),
     AccordionModule.forRoot(),
@@ -86,9 +90,9 @@ import { SupplierManagementComponent } from './cow-pliance/supplier-management/s
     HttpClientModule
   ],
   declarations: [
-    MainLayoutComponent, 
-    HeaderComponent, 
-    SiderbarComponent, 
+    MainLayoutComponent,
+    HeaderComponent,
+    SiderbarComponent,
     CowSetupComponent,
     CompanyDetailsComponent,
     CompanyFarmsComponent,
@@ -144,8 +148,12 @@ import { SupplierManagementComponent } from './cow-pliance/supplier-management/s
     BioSecurityComponent,
     SupplierManagementComponent
   ],
-  providers : [
-    CompanySetupService
-  ]
+  providers: [
+    {
+    provide : HTTP_INTERCEPTORS,
+    useClass : TokenInterceptor,
+    multi : true
+  },
+  CowSetupService],
 })
 export class MainLayoutModule { }

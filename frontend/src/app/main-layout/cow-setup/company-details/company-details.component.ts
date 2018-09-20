@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CompanySetupService } from '../cow-setup.service'; 
+import { CowSetupService } from '../cow-setup.service'; 
 import { FormGroup, FormBuilder, Validators, FormControl, AbstractControl, NG_VALIDATORS, Validator } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
@@ -15,7 +15,7 @@ export class CompanyDetailsComponent implements OnInit {
   company_form_validation: boolean = false;
   country_list : any = [];
   constructor(
-    private CompanySetupService : CompanySetupService,
+    private CowSetupService : CowSetupService,
     private toastr : ToastrService,
     private fb: FormBuilder
   ) { 
@@ -28,9 +28,10 @@ export class CompanyDetailsComponent implements OnInit {
       phno : ['', [Validators.required, this.noWhitespaceValidator]],
       email : ['', [Validators.required, Validators.email]]
     });
-    this.CompanySetupService.getAllCountry().subscribe((response) => {
+    this.CowSetupService.getAllCountry().subscribe((response) => {
       this.country_list = response['data'];
     });
+    this.getCompanyDetail();
   }
 
   noWhitespaceValidator(control: FormControl) {
@@ -45,8 +46,25 @@ export class CompanyDetailsComponent implements OnInit {
 
   save(flag : boolean) {
     if(flag) {
-
+      this.show_spinner = true;
+      this.CowSetupService.saveCompanyDetails(this.companydata).subscribe((response) => {
+        this.toastr.success(response['message'], 'Success!', { timeOut: 3000 });
+        this.getCompanyDetail();
+      }, (error) => {
+        if(error['error']['message']) {
+          this.toastr.success(error['error']['message'], 'Success!', { timeOut: 3000 });
+        }
+        this.show_spinner = false;
+      }, () => {
+        this.show_spinner = false;
+      });
     }
     this.company_form_validation = !flag;
+  }
+
+  getCompanyDetail() {
+    this.CowSetupService.getCompanyDetails().subscribe((response) => {
+      this.companydata = response['data'];
+    });
   }
 }

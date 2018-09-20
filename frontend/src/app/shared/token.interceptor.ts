@@ -16,12 +16,13 @@ export class TokenInterceptor implements HttpInterceptor {
 
   constructor(private router: Router) { }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const token = localStorage.getItem('auth');
+    let token = '';
     let islogin = false;
     let loginUser = localStorage.getItem('user');
     try {
       loginUser = JSON.parse(loginUser);
-      if (loginUser['_id']) {
+      token = loginUser['token'];
+      if (loginUser['data']) {
         islogin = true;
       } else {
         islogin = false;
