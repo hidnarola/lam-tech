@@ -59,6 +59,14 @@ import { CowCloudComponent } from './cow-cloud/cow-cloud.component';
 import { CowCloudListComponent } from './cow-cloud/cow-cloud-list/cow-cloud-list.component';
 import { CowSummaryComponent } from './cow-cloud/cow-summary/cow-summary.component';
 import { CowProfileComponent } from './cow-cloud/cow-profile/cow-profile.component';
+import { CowPlianceComponent } from './cow-pliance/cow-pliance.component';
+import { AnimalWelfareComponent } from './cow-pliance/animal-welfare/animal-welfare.component';
+import { EnvironmentalManagementComponent } from './cow-pliance/environmental-management/environmental-management.component';
+import { HumanResourcesComponent } from './cow-pliance/human-resources/human-resources.component';
+import { FinancialManagementComponent } from './cow-pliance/financial-management/financial-management.component';
+import { AgriculturePracticesComponent } from './cow-pliance/agriculture-practices/agriculture-practices.component';
+import { BioSecurityComponent } from './cow-pliance/bio-security/bio-security.component';
+import { SupplierManagementComponent } from './cow-pliance/supplier-management/supplier-management.component';
 
 
 @NgModule({
@@ -120,7 +128,15 @@ import { CowProfileComponent } from './cow-cloud/cow-profile/cow-profile.compone
     CowCloudComponent,
     CowCloudListComponent,
     CowSummaryComponent,
-    CowProfileComponent
+    CowProfileComponent,
+    CowPlianceComponent,
+    AnimalWelfareComponent,
+    EnvironmentalManagementComponent,
+    HumanResourcesComponent,
+    FinancialManagementComponent,
+    AgriculturePracticesComponent,
+    BioSecurityComponent,
+    SupplierManagementComponent
   ]
 })
 export class MainLayoutModule { }

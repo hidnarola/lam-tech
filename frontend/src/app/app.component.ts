@@ -1,13 +1,13 @@
-import { Component, Renderer2  } from '@angular/core';
+import { Component, Renderer2 , OnInit  } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { setTheme } from 'ngx-bootstrap/utils';
-
+import * as AOS from 'aos';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app';
   previousUrl: string;
   constructor(private renderer: Renderer2, private router: Router) {
@@ -28,5 +28,9 @@ export class AppComponent {
           // this.previousUrl = currentUrlSlug;
         }
       });
+  }
+
+  ngOnInit() {
+    AOS.init();
   }
 }

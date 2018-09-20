@@ -52,6 +52,16 @@ import { CowCloudListComponent } from './cow-cloud/cow-cloud-list/cow-cloud-list
 import { CowSummaryComponent } from './cow-cloud/cow-summary/cow-summary.component';
 import { CowProfileComponent } from './cow-cloud/cow-profile/cow-profile.component';
 
+// Cow pliance
+import { CowPlianceComponent } from './cow-pliance/cow-pliance.component';
+import { AnimalWelfareComponent } from './cow-pliance/animal-welfare/animal-welfare.component';
+import { EnvironmentalManagementComponent } from './cow-pliance/environmental-management/environmental-management.component';
+import { HumanResourcesComponent } from './cow-pliance/human-resources/human-resources.component';
+import { FinancialManagementComponent } from './cow-pliance/financial-management/financial-management.component';
+import { AgriculturePracticesComponent } from './cow-pliance/agriculture-practices/agriculture-practices.component';
+import { BioSecurityComponent } from './cow-pliance/bio-security/bio-security.component';
+import { SupplierManagementComponent } from './cow-pliance/supplier-management/supplier-management.component';
+
 @NgModule({
     imports: [
         RouterModule.forRoot([
@@ -162,6 +172,18 @@ import { CowProfileComponent } from './cow-cloud/cow-profile/cow-profile.compone
                             {path : '', component : CowCloudListComponent},
                             {path : 'cow-summary', component : CowSummaryComponent},
                             {path : 'cow-profile', component : CowProfileComponent}
+                        ]
+                    },
+                    {
+                        path : 'cow-pliance', component : CowPlianceComponent,
+                        children : [
+                            {path : 'animal-welfare', component : AnimalWelfareComponent},
+                            {path : 'environmental-management', component :EnvironmentalManagementComponent },
+                            {path : 'human-resources', component : HumanResourcesComponent},
+                            {path : 'financial-management', component : FinancialManagementComponent},
+                            {path : 'agricultural-practices', component : AgriculturePracticesComponent},
+                            {path : 'bio-security', component : BioSecurityComponent},
+                            {path : 'supplier-management', component : SupplierManagementComponent}
                         ]
                     }
                 ]
