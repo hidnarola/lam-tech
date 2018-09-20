@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { DataTablesModule } from 'angular-datatables';
 import { MainLayoutComponent } from './main-layout.component';
 import { HeaderComponent } from './header/header.component';
@@ -48,33 +50,49 @@ import { LivestockPositionComponent } from './cow-bank/reports/livestock-positio
 import { DocumentReconciliationComponent } from './cow-bank/reports/document-reconciliation/document-reconciliation.component';
 import { DocumentByAnimalComponent } from './cow-bank/reports/document-by-animal/document-by-animal.component';
 
-import { 
-        BsDropdownModule, 
-        ModalModule, 
-        AccordionModule,
-        BsDatepickerModule  
- } from 'ngx-bootstrap';
+import {
+  BsDropdownModule,
+  ModalModule,
+  AccordionModule,
+  BsDatepickerModule
+} from 'ngx-bootstrap';
 
 import { CowCloudComponent } from './cow-cloud/cow-cloud.component';
 import { CowCloudListComponent } from './cow-cloud/cow-cloud-list/cow-cloud-list.component';
 import { CowSummaryComponent } from './cow-cloud/cow-summary/cow-summary.component';
 import { CowProfileComponent } from './cow-cloud/cow-profile/cow-profile.component';
+import { CowPlianceComponent } from './cow-pliance/cow-pliance.component';
+import { AnimalWelfareComponent } from './cow-pliance/animal-welfare/animal-welfare.component';
+import { EnvironmentalManagementComponent } from './cow-pliance/environmental-management/environmental-management.component';
+import { HumanResourcesComponent } from './cow-pliance/human-resources/human-resources.component';
+import { FinancialManagementComponent } from './cow-pliance/financial-management/financial-management.component';
+import { AgriculturePracticesComponent } from './cow-pliance/agriculture-practices/agriculture-practices.component';
+import { BioSecurityComponent } from './cow-pliance/bio-security/bio-security.component';
+import { SupplierManagementComponent } from './cow-pliance/supplier-management/supplier-management.component';
+import { TokenInterceptor } from '../shared/token.interceptor';
 
+//Load services
+import { CowBankService } from './cow-bank/cow-bank.service';
+import { CowSetupService } from './cow-setup/cow-setup.service';
 
 @NgModule({
   imports: [
     CommonModule,
     LendingLayoutRoutingModule,
     BsDropdownModule,
+    HttpClientModule,
     DataTablesModule,
     ModalModule.forRoot(),
     AccordionModule.forRoot(),
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   declarations: [
-    MainLayoutComponent, 
-    HeaderComponent, 
-    SiderbarComponent, 
+    MainLayoutComponent,
+    HeaderComponent,
+    SiderbarComponent,
     CowSetupComponent,
     CompanyDetailsComponent,
     CompanyFarmsComponent,
@@ -120,7 +138,22 @@ import { CowProfileComponent } from './cow-cloud/cow-profile/cow-profile.compone
     CowCloudComponent,
     CowCloudListComponent,
     CowSummaryComponent,
-    CowProfileComponent
-  ]
+    CowProfileComponent,
+    CowPlianceComponent,
+    AnimalWelfareComponent,
+    EnvironmentalManagementComponent,
+    HumanResourcesComponent,
+    FinancialManagementComponent,
+    AgriculturePracticesComponent,
+    BioSecurityComponent,
+    SupplierManagementComponent
+  ],
+  providers: [
+    {
+    provide : HTTP_INTERCEPTORS,
+    useClass : TokenInterceptor,
+    multi : true
+  },
+  CowSetupService],
 })
 export class MainLayoutModule { }

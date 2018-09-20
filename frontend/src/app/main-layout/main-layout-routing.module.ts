@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MainLayoutComponent } from './main-layout.component';
+//Auth services
+import { AuthService } from './../shared/auth.service';
 // cow setup start
 import { CowSetupComponent } from './cow-setup/cow-setup.component';
 import { CompanyDetailsComponent } from './cow-setup/company-details/company-details.component';
@@ -52,121 +54,144 @@ import { CowCloudListComponent } from './cow-cloud/cow-cloud-list/cow-cloud-list
 import { CowSummaryComponent } from './cow-cloud/cow-summary/cow-summary.component';
 import { CowProfileComponent } from './cow-cloud/cow-profile/cow-profile.component';
 
+// Cow pliance
+import { CowPlianceComponent } from './cow-pliance/cow-pliance.component';
+import { AnimalWelfareComponent } from './cow-pliance/animal-welfare/animal-welfare.component';
+import { EnvironmentalManagementComponent } from './cow-pliance/environmental-management/environmental-management.component';
+import { HumanResourcesComponent } from './cow-pliance/human-resources/human-resources.component';
+import { FinancialManagementComponent } from './cow-pliance/financial-management/financial-management.component';
+import { AgriculturePracticesComponent } from './cow-pliance/agriculture-practices/agriculture-practices.component';
+import { BioSecurityComponent } from './cow-pliance/bio-security/bio-security.component';
+import { SupplierManagementComponent } from './cow-pliance/supplier-management/supplier-management.component';
+
 @NgModule({
     imports: [
         RouterModule.forRoot([
             {
                 path: 'dashboard', component: MainLayoutComponent,
+                canActivate: [AuthService],
                 children: [
                     {
-                        path : 'cow_setup', component : CowSetupComponent,
-                        children : [
-                            {path : '', component : CompanyDetailsComponent},
-                            {path : 'company-details', component : CompanyDetailsComponent},
+                        path: 'cow_setup', component: CowSetupComponent,
+                        children: [
+                            { path: '', component: CompanyDetailsComponent },
+                            { path: 'company-details', component: CompanyDetailsComponent },
                             {
-                                path : 'company_farms', component : CompanyFarmsComponent,
-                                children : [
-                                    {path : '', component : ListComponent},     
-                                    {path : 'add', component : AddComponent }     
+                                path: 'company_farms', component: CompanyFarmsComponent,
+                                children: [
+                                    { path: '', component: ListComponent },
+                                    { path: 'add', component: AddComponent }
                                 ]
                             },
                             {
-                                path : 'contract_farms', component : ContractFarmsComponent,
-                                children : [
-                                    {path : '', component : ContractListComponent },     
-                                    {path : 'add', component : ContractAddComponent }     
+                                path: 'contract_farms', component: ContractFarmsComponent,
+                                children: [
+                                    { path: '', component: ContractListComponent },
+                                    { path: 'add', component: ContractAddComponent }
                                 ]
-                                
+
                             },
                             {
-                                path : 'customers', component : CustomersComponent,
-                                children : [
-                                    {path : '', component : CustomerListComponent},     
-                                    {path : 'add', component : CustomerAddComponent}
+                                path: 'customers', component: CustomersComponent,
+                                children: [
+                                    { path: '', component: CustomerListComponent },
+                                    { path: 'add', component: CustomerAddComponent }
                                 ]
                             },
-                            {path : 'livestock_agents', component : LivestockAgentsComponent},
+                            { path: 'livestock_agents', component: LivestockAgentsComponent },
                             {
-                                path : 'freight_companies', component : FreightCompaniesComponent,
-                                children : [
-                                    {path : '', component : FreightListComponent},     
-                                    {path : 'add', component : FreightAddComponent}
+                                path: 'freight_companies', component: FreightCompaniesComponent,
+                                children: [
+                                    { path: '', component: FreightListComponent },
+                                    { path: 'add', component: FreightAddComponent }
                                 ]
                             }
                         ]
                     },
                     {
-                        path : 'cow_bank', component : CowBankComponent,
-                        children : [
-                            {path : 'sales-contract', component : SalesContractComponent},
+                        path: 'cow_bank', component: CowBankComponent,
+                        children: [
+                            { path: '', component: SalesListComponent },
                             {
-                                path : '', component : SalesContractComponent, 
-                                children : [
-                                    {path : '', component : SalesListComponent},
-                                    {path : 'add', component : SalesAddComponent}
+                                path: 'sales-contract', component: SalesContractComponent,
+                                children: [
+                                    { path: '', component: SalesListComponent },
+                                    { path: 'add', component: SalesAddComponent }
                                 ]
                             },
                             {
-                                path : 'cattle_purchase', component : CattlePurchaseComponent,
-                                children : [
-                                    {path : '', component : PurchaseListComponent},
-                                    {path : 'purchase_insttruction', component : PurchaseInstructionComponent},
-                                    {path : 'internal_transfer', component : InternalTransferComponent},
-                                    {path : 'purchase_contract', component : PurchaseContractComponent}
+                                path: 'cattle_purchase', component: CattlePurchaseComponent,
+                                children: [
+                                    { path: '', component: PurchaseListComponent },
+                                    { path: 'purchase_insttruction', component: PurchaseInstructionComponent },
+                                    { path: 'internal_transfer', component: InternalTransferComponent },
+                                    { path: 'purchase_contract', component: PurchaseContractComponent }
                                 ]
                             },
-                            {path : 'cattle_receipts', component : CattleReceiptComponent},
+                            { path: 'cattle_receipts', component: CattleReceiptComponent },
                             {
-                                path : 'induction_feed_cost', component : InductionFeedCostComponent,
-                                children : [
-                                    {path : '', component : InductionListComponent},
-                                    {path : 'add_induction_summary', component : InductionSummaryComponent},
-                                    {path : 'add_cow_record', component : CowRecordComponent}
-                                ]
-                            },
-                            {
-                                path : 'hospitalised_cattle_record', component : HospitalisedCattleRecordComponent,
-                                children : [
-                                    {path : '', component : CattleListComponent},
-                                    {path : 'add_sick_animal', component : SickAnimalComponent}
+                                path: 'induction_feed_cost', component: InductionFeedCostComponent,
+                                children: [
+                                    { path: '', component: InductionListComponent },
+                                    { path: 'add_induction_summary', component: InductionSummaryComponent },
+                                    { path: 'add_cow_record', component: CowRecordComponent }
                                 ]
                             },
                             {
-                                path : 'cattle-death-record', component : CattleDeathRecordComponent,
-                                children : [
-                                    {path : '', component : CattleDeathListComponent},
-                                    {path : 'add-death-record', component : DeathRecordComponent}
+                                path: 'hospitalised_cattle_record', component: HospitalisedCattleRecordComponent,
+                                children: [
+                                    { path: '', component: CattleListComponent },
+                                    { path: 'add_sick_animal', component: SickAnimalComponent }
                                 ]
                             },
                             {
-                                path : 'cattle-deliveries', component : CattleDeliveriesComponent,
-                                children : [
-                                    {path : '', component : DeliveryListComponent},
-                                    {path : 'consignment', component : ConsignmentComponent}
+                                path: 'cattle-death-record', component: CattleDeathRecordComponent,
+                                children: [
+                                    { path: '', component: CattleDeathListComponent },
+                                    { path: 'add-death-record', component: DeathRecordComponent }
                                 ]
                             },
                             {
-                                path : 'reports', component : ReportsComponent,
-                                children : [
-                                    {path : '', component : LivestockPositionComponent},
-                                    {path : 'document-reconciliation', component : DocumentReconciliationComponent},
-                                    {path : 'document-by-animal', component : DocumentByAnimalComponent}
+                                path: 'cattle-deliveries', component: CattleDeliveriesComponent,
+                                children: [
+                                    { path: '', component: DeliveryListComponent },
+                                    { path: 'consignment', component: ConsignmentComponent }
+                                ]
+                            },
+                            {
+                                path: 'reports', component: ReportsComponent,
+                                children: [
+                                    { path: '', component: LivestockPositionComponent },
+                                    { path: 'document-reconciliation', component: DocumentReconciliationComponent },
+                                    { path: 'document-by-animal', component: DocumentByAnimalComponent }
 
                                 ]
                             }
                         ]
                     },
                     {
-                        path : 'cow-cloud', component: CowCloudComponent,
-                        children : [
-                            {path : '', component : CowCloudListComponent},
-                            {path : 'cow-summary', component : CowSummaryComponent},
-                            {path : 'cow-profile', component : CowProfileComponent}
+                        path: 'cow-cloud', component: CowCloudComponent,
+                        children: [
+                            { path: '', component: CowCloudListComponent },
+                            { path: 'cow-summary', component: CowSummaryComponent },
+                            { path: 'cow-profile', component: CowProfileComponent }
+                        ]
+                    },
+                    {
+                        path: 'cow-pliance', component: CowPlianceComponent,
+                        children: [
+                            { path: 'animal-welfare', component: AnimalWelfareComponent },
+                            { path: 'environmental-management', component: EnvironmentalManagementComponent },
+                            { path: 'human-resources', component: HumanResourcesComponent },
+                            { path: 'financial-management', component: FinancialManagementComponent },
+                            { path: 'agricultural-practices', component: AgriculturePracticesComponent },
+                            { path: 'bio-security', component: BioSecurityComponent },
+                            { path: 'supplier-management', component: SupplierManagementComponent }
                         ]
                     }
                 ]
             },
-            { path: '**', redirectTo: 'cow_setup', pathMatch: 'full' },
+            // { path: '**', redirectTo: 'cow_setup', pathMatch: 'full' },
         ])
     ],
     exports: [RouterModule]

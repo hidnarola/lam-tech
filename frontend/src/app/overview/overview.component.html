@@ -3,7 +3,7 @@
 		<header class="header d-flex">
 			<div class="header-l d-flex">
 				<div class="header-logo">
-					<a href="" class="desktop-logo"><img src="img/svg/logo.svg" alt="" /></a>
+					<a href="" class="desktop-logo"><img src="assets/img/svg/logo.svg" alt="" /></a>
 					<a href="" class="logo-icon"><img src="assets/img/svg/logo-icon.svg" alt="" /></a>
 				</div>
 				<div class="header-srh">
@@ -84,7 +84,7 @@
 										</div>
 									</div>
 								</div>
-								<button class="btn-css green-btn-bdr">LOGOUT</button>
+								<button class="btn-css green-btn-bdr" (click)="logout()">LOGOUT</button>
 							</div>
 						</div> 
 					</div>
@@ -117,7 +117,7 @@
 						</li>
 						<li class="cow-cloud-li">
 							<div class="overview-l-box">
-								<a href="">
+								<a href="javascript:;" routerLink="/dashboard/cow-cloud">
 									<span></span>
 									<strong>Cow Cloud</strong>
 								</a>
@@ -125,7 +125,7 @@
 						</li>
 						<li class="cow-pliance-li">
 							<div class="overview-l-box">
-								<a href="">
+								<a href="javascript:;" routerLink="/dashboard/cow-pliance/animal-welfare">
 									<span></span>
 									<strong>Cow Pliance</strong>
 								</a>
@@ -159,7 +159,7 @@
 			<div class="overview-body-r">
 				<h2>QUICK LINKS</h2>
 				<ul>
-					<li class="sales-contracts-li"><a href="javascript:;" routerLink="/dashboard/cow_bank"><span></span> <strong>Sales Contracts</strong></a></li>
+					<li class="sales-contracts-li"><a href="javascript:;" routerLink="/dashboard/cow_bank/sales-contract"><span></span> <strong>Sales Contracts</strong></a></li>
 					<li class="cattle-purchases-li"><a href="javascript:;" routerLink="/dashboard/cow_bank/cattle_purchase"><span></span><strong>Cattle Purchases</strong></a></li>
 					<li class="cattle-receipts-li"><a href="javascript:;" routerLink="/dashboard/cow_bank/cattle_receipts"><span></span> <strong>Cattle Receipts</strong></a></li>
 					<li class="inducation-feed-li"><a href="javascript:;" routerLink="/dashboard/cow_bank/induction_feed_cost"><span></span> <strong>Induction & Feed Costs</strong></a></li>

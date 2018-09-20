@@ -1,5 +1,5 @@
 <div class="content-wrap-body mrg-top">
-	<form>
+	<form [formGroup]="company_form">
 		<div class="form-information">
 			<div class="form-information-title">
 				<h3>COMPANY INFORMATION</h3>	
@@ -9,55 +9,81 @@
 					<li>
 						<div class="login-input">
 							<label>Company Registration Number</label>
-							<input type="text" name="" placeholder="1234567890">
+							<input type="text" name="registration_no" formControlName="reg_no"  [(ngModel)]="companydata.registration_number" placeholder="1234567890">
+							<div class="cust_err_msg" *ngIf="company_form_validation && !company_form.controls['reg_no'].valid">
+								<span *ngIf="company_form.controls['reg_no'].errors['required']" class="text-danger">Company Registration number is required.</span>
+								<span *ngIf="!company_form.controls['reg_no'].errors['required'] && company_form.controls['reg_no'].errors['whitespace']" class="text-danger">Please enter valid data.</span>
+							</div>
 						</div>
 					</li>
 					<li>
 						<div class="login-input">
 							<label>Company Name</label>
-							<input type="text" name="" placeholder="Company Name">
+							<input type="text" name="name" formControlName="name" placeholder="Company Name" [(ngModel)]="companydata.company_name">
+							<div class="cust_err_msg" *ngIf="company_form_validation && !company_form.controls['name'].valid">
+								<span *ngIf="company_form.controls['name'].errors['required']" class="text-danger">Company name is required.</span>
+								<span *ngIf="!company_form.controls['name'].errors['required'] && company_form.controls['name'].errors['whitespace']" class="text-danger">Please enter valid data.</span>
+							</div>
 						</div>
 					</li>
 					<li>
 						<div class="login-input">
 							<label>Address</label>
-							<input type="text" name="" placeholder="212 Lorem ipsum Street">
+							<input type="text" name="address" formControlName="address"  placeholder="212 Lorem ipsum Street" [(ngModel)]="companydata.address">
 						</div>
 					</li>
 					<li>
 						<ul class="d-flex">
 							<li>
 								<div class="login-input">
-									<label>Company Name</label>
-									<input type="text" name="" placeholder="Company Name">
+									<label>State</label>
+									<input type="text" name="state" formControlName="state"  placeholder="State" [(ngModel)]="companydata.state">
+									<div class="cust_err_msg" *ngIf="company_form_validation && !company_form.controls['state'].valid">
+										<span *ngIf="company_form.controls['state'].errors['required']" class="text-danger">State is required.</span>
+										<span *ngIf="!company_form.controls['state'].errors['required'] && company_form.controls['state'].errors['whitespace']" class="text-danger">Please enter valid data.</span>
+									</div>
 								</div>
 							</li>
 							<li>
 								<div class="login-input">
-									<label>Company Name</label>
-									<input type="text" name="" placeholder="Company Name">
+									<label>Country</label>
+									<select name="country" formControlName="country" [(ngModel)]="companydata.country">
+										<option value="">Select Country</option>
+										<option *ngFor="let c of country_list" value="{{c['_id']}}">{{c['name']}}</option>
+									</select>
+									<div class="cust_err_msg" *ngIf="company_form_validation && !company_form.controls['country'].valid">
+										<span *ngIf="company_form.controls['country'].errors['required']" class="text-danger">Country is required.</span>
+									</div>
 								</div>
 							</li>
 						</ul>
 					</li>
 					<li>
 						<div class="login-input">
-							<label>Company Name</label>
-							<input type="text" name="" placeholder="Company Name">
+							<label>Cell Phone Number</label>
+							<input type="text" name="phone" formControlName="phno" placeholder="Cell Phone Number" [(ngModel)]="companydata.phone_no">
+							<div class="cust_err_msg" *ngIf="company_form_validation && !company_form.controls['phno'].valid">
+								<span *ngIf="company_form.controls['phno'].errors['required']" class="text-danger">Phone Number is required.</span>
+								<span *ngIf="!company_form.controls['phno'].errors['required'] && company_form.controls['phno'].errors['whitespace']" class="text-danger">Please enter valid data.</span>
+							</div>
 						</div>
 					</li>
 					<li>
 						<div class="login-input">
-							<label>Address</label>
-							<input type="text" name="" placeholder="212 Lorem ipsum Street">
+							<label>Email</label>
+							<input type="email" name="email" formControlName="email" placeholder="lorem@lorem.com" [(ngModel)]="companydata.email">
+							<div class="cust_err_msg" *ngIf="company_form_validation && !company_form.controls['email'].valid">
+								<span *ngIf="company_form.controls['email'].errors['required']" class="text-danger">Email is required.</span>
+								<span *ngIf="!company_form.controls['email'].errors['required'] && company_form.controls['email'].errors['email']" class="text-danger">Please enter valid data.</span>
+							</div>
 						</div>
 					</li>
 				</ul>	
 			</div>
 		</div>		
 		<div class="form-btn d-flex">
-			<button class="btn-css green-btn-bg">SAVE</button>
-			<button class="btn-css white-btn-bdr">CANCEL</button>
+			<button type="submit" class="btn-css green-btn-bg" (click)="save(company_form.valid)" [disabled]="show_spinner">SAVE <i *ngIf="show_spinner" class="fa fa-spinner fa-spin"></i></button>
+			<button class="btn-css white-btn-bdr" routerLink="/overview">CANCEL</button>
 		</div>
 	</form>
 </div>

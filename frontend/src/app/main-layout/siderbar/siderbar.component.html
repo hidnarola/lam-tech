@@ -9,13 +9,14 @@
 		<strong>MATTHEW OLIVER</strong>
 	</div>
 	  <ul>
-	    <li  class="side-link-1"><a href="javascript:;" routerLink="/overview"><span></span><strong>Overview</strong></a></li>
-	    <li  class="side-link-2 active"><a href="javascript:;" routerLink="/dashboard/cow_setup/company-details"><span></span> <strong>Cow Set Up</strong></a></li>
-	    <li  class="side-link-3"><a href="javascript:;" routerLink="/dashboard/cow_bank/sales-contract"><span></span> <strong>Cow Bank</strong></a></li>
-	    <li  class="side-link-4"><a href="javascript:;" routerLink="/dashboard/cow-cloud"><span></span><strong>Cow Cloud</strong></a></li>
-	    <li  class="side-link-5"><a href="javascript:;"><span></span><strong>Cow Pliance</strong></a></li>
-	    <li  class="side-link-6"><a href="javascript:;"><span></span><strong>Cow Municator</strong></a></li>
-	    <li  class="side-link-7"><a href="javascript:;"><span></span><strong>Cow journal</strong></a></li>
+			
+	    <li  class="side-link-1" routerLinkActive="active"><a href="javascript:;" routerLink="/overview"><span></span><strong>Overview</strong></a></li>
+	    <li  class="side-link-2" [class.active]="current_url.includes('cow_setup')"	><a href="javascript:;" routerLink="/dashboard/cow_setup/company-details"><span></span> <strong>Cow Set Up</strong></a></li>
+	    <li  class="side-link-3" [class.active]="current_url.includes('cow_bank')"><a href="javascript:;" routerLink="/dashboard/cow_bank/sales-contract"><span></span> <strong>Cow Bank</strong></a></li>
+	    <li  class="side-link-4" [class.active]="current_url.includes('cow-cloud')"><a href="javascript:;" routerLink="/dashboard/cow-cloud"><span></span><strong>Cow Cloud</strong></a></li>
+	    <li  class="side-link-5" [class.active]="current_url.includes('cow-pliance')"><a href="javascript:;" routerLink="/dashboard/cow-pliance/animal-welfare"><span></span><strong>Cow Pliance</strong></a></li>
+	    <li  class="side-link-6" routerLinkActive="active"><a href="javascript:;"><span></span><strong>Cow Municator</strong></a></li>
+	    <li  class="side-link-7" routerLinkActive="active"><a href="javascript:;"><span></span><strong>Cow journal</strong></a></li>
 	  </ul>
 	  <div class="mobile-logout">
 	  	<button type="submit" class="btn-css white-btn-bg">LOGOUT</button>

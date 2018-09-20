@@ -5,13 +5,15 @@ import { LoginRoutingModule } from './login-routing.module';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { LoginService } from './login.service';
+
 @NgModule({
   imports: [
     CommonModule,
     LoginRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   declarations: [LoginComponent],
   providers : [LoginService]
