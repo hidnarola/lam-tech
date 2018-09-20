@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { DataTablesModule } from 'angular-datatables';
 import { MainLayoutComponent } from './main-layout.component';
 import { HeaderComponent } from './header/header.component';
 import { SiderbarComponent } from './siderbar/siderbar.component';
 import { LendingLayoutRoutingModule } from './main-layout-routing.module';
 import { CowSetupComponent } from './cow-setup/cow-setup.component';
+import { CompanySetupService } from './cow-setup/cow-setup.service';
 import { CompanyDetailsComponent } from './cow-setup/company-details/company-details.component';
 import { CompanyFarmsComponent } from './cow-setup/company-farms/company-farms.component';
 import { ContractFarmsComponent } from './cow-setup/contract-farms/contract-farms.component';
@@ -77,7 +80,10 @@ import { SupplierManagementComponent } from './cow-pliance/supplier-management/s
     DataTablesModule,
     ModalModule.forRoot(),
     AccordionModule.forRoot(),
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   declarations: [
     MainLayoutComponent, 
@@ -137,6 +143,9 @@ import { SupplierManagementComponent } from './cow-pliance/supplier-management/s
     AgriculturePracticesComponent,
     BioSecurityComponent,
     SupplierManagementComponent
+  ],
+  providers : [
+    CompanySetupService
   ]
 })
 export class MainLayoutModule { }

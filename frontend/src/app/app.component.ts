@@ -18,8 +18,15 @@ export class AppComponent implements OnInit {
           // if (this.previousUrl) {
           //   this.renderer.removeClass(document.body, this.previousUrl);
           // }
+          const user = localStorage.getItem('user');
           let currentUrlSlug = event.url.slice(1)
-          console.log('current slug', currentUrlSlug);
+          if (currentUrlSlug.includes('login') || currentUrlSlug == "") {
+            if (!user) {
+              return true
+            }
+            this.router.navigate(['/overview']);
+          }
+
           if (currentUrlSlug.includes('dashboard')) {
             this.renderer.addClass(document.body, 'dashboard-pages');
           } else {

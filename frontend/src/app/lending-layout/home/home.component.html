@@ -229,7 +229,7 @@
             </div>  
         </div>
         <div class="get-started-btn">
-          <button type="submit" (click)="addGettingStarted(getting_started.valid)">SUBMIT</button>
+          <button type="submit" [disabled]="getting_started_show_loader" (click)="addGettingStarted(getting_started.valid)">SUBMIT <i *ngIf="getting_started_show_loader"class="fa fa-spinner fa-spin"></i></button>
         </div>
       </div>
       </form>

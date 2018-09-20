@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MainLayoutComponent } from './main-layout.component';
+//Auth services
+import { AuthService } from './../shared/auth.service';
 // cow setup start
 import { CowSetupComponent } from './cow-setup/cow-setup.component';
 import { CompanyDetailsComponent } from './cow-setup/company-details/company-details.component';
@@ -67,6 +69,7 @@ import { SupplierManagementComponent } from './cow-pliance/supplier-management/s
         RouterModule.forRoot([
             {
                 path: 'dashboard', component: MainLayoutComponent,
+                canActivate: [AuthService],
                 children: [
                     {
                         path : 'cow_setup', component : CowSetupComponent,

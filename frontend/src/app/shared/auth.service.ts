@@ -15,9 +15,9 @@ export class AuthService implements CanActivate {
     if(state.url.includes('/admin')) {
       this.router.navigate(['/admin/login']);
     } else if(state.url.includes('/admin') && !user.hasOwnProperty('admin')) {
-      this.router.navigate(['']);
+      this.router.navigate(['/login']);
     } else {
-      this.router.navigate(['']);
+      this.router.navigate(['/login']);
     }
     return false;
   }
