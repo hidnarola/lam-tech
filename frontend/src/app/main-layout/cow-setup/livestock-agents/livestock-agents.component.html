@@ -1,0 +1,107 @@
+<div class="full-bdr-btm d-flex edit-add-option">
+  <div class="edit-add-option-l">
+    <button class="edit-btn d-flex"> <span></span> <strong>EDIT</strong></button>
+  </div>
+  <div class="edit-add-option-r">
+    <button class="btn-css green-btn-bg" (click)="openAddAgentModal(addAgent)">Add Agents</button>
+  </div>  
+</div>
+<div class="datatable-wrap">
+  <table datatable class="row-border hover">
+    <thead>
+      <tr>
+        <th>
+          <div class="checkbox">
+        <input id="check11" type="checkbox" name="check" value="check11">
+        <label for="check11"></label>
+          </div>
+        </th>
+        <th>AGENT ID CODE</th>
+        <th>AGENCY NAME</th>
+        <th>ADDRESS</th>
+        <th>STATE</th>
+        <th>COUNTRY</th>
+        <th>ZIP</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="checkbox">
+        <input id="check12" type="checkbox" name="check" value="check12">
+        <label for="check12"></label>
+          </div></td>
+        <td class="green-text-bold">COMPANY REGISTRATION #</td>
+        <td>Auto Fill</td>
+        <td>Auto Fill</td>
+        <td>Auto Fill</td>
+        <td>Auto Fill</td>
+        <td>Auto Fill</td>
+      </tr>
+      <tr>
+        <td><div class="checkbox">
+        <input id="check13" type="checkbox" name="check" value="check13">
+        <label for="check13"></label>
+          </div></td>
+        <td class="green-text-bold">COMPANY REGISTRATION #</td>
+        <td>Auto Fill</td>
+        <td>Auto Fill</td>
+        <td>Auto Fill</td>
+        <td>Auto Fill</td>
+        <td>Auto Fill</td>
+      </tr>
+      <tr>
+        <td><div class="checkbox">
+        <input id="check14" type="checkbox" name="check" value="check14">
+        <label for="check14"></label>
+          </div></td>
+        <td class="green-text-bold">COMPANY REGISTRATION #</td>
+        <td>Auto Fill</td>
+        <td>Auto Fill</td>
+        <td>Auto Fill</td>
+        <td>Auto Fill</td>
+        <td>Auto Fill</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="checkbox">
+            <input id="check15" type="checkbox" name="check" value="check15">
+            <label for="check15"></label>
+          </div>
+        </td>
+        <td class="green-text-bold">COMPANY REGISTRATION #</td>
+        <td>Auto Fill</td>
+        <td>Auto Fill</td>
+        <td>Auto Fill</td>
+        <td>Auto Fill</td>
+        <td>Auto Fill</td>
+      </tr>
+    </tbody>
+    </table>
+</div> 
+
+
+<ng-template #addAgent>
+  <div class="modal-body invite-agent-popup">
+      <div class="get-started-head">
+        <h2>Invite Agent or Agents</h2>
+        <p>Invite the following Agents to establish an account and complete documents on<br/>your behalf.</p>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="inviteAgentModalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="invite-agent-popup-body">
+        <div class="login-input">
+            <label>Person's Name</label>
+            <input type="text" name="fname" placeholder="Person's Name">
+        </div>
+        <div class="login-input">
+            <label>Email</label>
+            <input type="text" name="lname" placeholder="Email">
+        </div>
+        <div class="invite-agent-popup-btn">
+          <button class="btn-css white-btn-bdr">INVITE MORE AGENTS</button>
+          <button class="btn-css green-btn-bg">INVITE TO SET UP ACCOUNT</button>
+        </div>
+      </div>
+  </div>
+</ng-template>

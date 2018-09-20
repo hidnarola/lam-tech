@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.344 53.738">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #86906b;
+      }
+    </style>
+  </defs>
+  <g id="logo" transform="translate(-75.451 -195.576)">
+    <path id="Path_272" data-name="Path 272" class="cls-1" d="M6.521,97.885H0V84.7H1.856V96.314H6.521v1.571Z" transform="translate(75.451 151.192)"/>
+    <path id="Path_273" data-name="Path 273" class="cls-1" d="M28.923,97.832H26.876L25.5,94.405H19.832l-1.38,3.427H16.5L21.879,84.6H23.5Zm-3.951-5-2.332-5.95-2.332,5.95Z" transform="translate(66.805 151.245)"/>
+    <path id="Path_274" data-name="Path 274" class="cls-1" d="M61.46,97.832H59.6l-.857-10.424H58.7L54.654,97.975H53.607L49.561,87.408h-.048l-.857,10.424H46.8L47.99,84.6h2.285l3.808,10.186h.048L57.938,84.6h2.285Z" transform="translate(50.927 151.245)"/>
+    <path id="Path_275" data-name="Path 275" class="cls-2" d="M91.153,85.552h-3.9v12.28H86.2V85.552H82.3V84.6h8.9v.952Z" transform="translate(32.325 151.245)"/>
+    <path id="Path_276" data-name="Path 276" class="cls-2" d="M114.43,97.885H107.1V84.7h7.187v.952h-6.14v4.807h5.807v.952h-5.807v5.617h6.283Z" transform="translate(19.329 151.192)"/>
+    <path id="Path_277" data-name="Path 277" class="cls-2" d="M140.066,95.866a6.316,6.316,0,0,1-4.9,2.047,6.808,6.808,0,0,1,0-13.613,6.725,6.725,0,0,1,4.807,1.9l-.666.762a5.374,5.374,0,0,0-4.141-1.761c-3.237,0-5.569,2.38-5.569,5.855,0,3.427,2.285,5.9,5.569,5.9A5.543,5.543,0,0,0,139.4,95.2Z" transform="translate(8.115 151.402)"/>
+    <path id="Path_278" data-name="Path 278" class="cls-2" d="M170.081,97.885h-1.047V91.316h-8.187v6.616H159.8V84.7h1.047v5.664h8.187V84.7h1.047Z" transform="translate(-8.286 151.192)"/>
+    <path id="Path_279" data-name="Path 279" class="cls-2" d="M90.7,31.415,97.792,0l7.092,16.8S102.362,30.511,90.7,31.415Z" transform="translate(27.923 195.576)"/>
+    <path id="Path_280" data-name="Path 280" class="cls-1" d="M75.084,31.415,67.992,0,60.9,16.8S63.423,30.511,75.084,31.415Z" transform="translate(43.539 195.576)"/>
+  </g>
+</svg>
