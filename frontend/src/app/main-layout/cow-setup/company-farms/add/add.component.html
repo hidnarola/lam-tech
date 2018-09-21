@@ -20,7 +20,7 @@
 						<li>
 							<div class="login-input">
 								<label>Property ID Code</label>
-								<input type="text" name="code" formControlName="code" placeholder="">
+								<input type="text" name="code" formControlName="code" [(ngModel)]="companyfarmdata.property_id" placeholder="">
 								<div class="cust_err_msg" *ngIf="companyfarm_form_validation && !companyfarm_form.controls['code'].valid">
 									<span *ngIf="companyfarm_form.controls['code'].errors['required']" class="text-danger">Property id code is required.</span>
 									<span *ngIf="!companyfarm_form.controls['code'].errors['required'] && companyfarm_form.controls['code'].errors['whitespace']" class="text-danger">Please enter valid data.</span>
@@ -30,7 +30,7 @@
 						<li>
 							<div class="login-input">
 								<label>Property Name</label>
-								<input type="text" name="name" formControlName="name" placeholder="">
+								<input type="text" name="name" formControlName="name" [(ngModel)]="companyfarmdata.property_name" placeholder="">
 								<div class="cust_err_msg" *ngIf="companyfarm_form_validation && !companyfarm_form.controls['name'].valid">
 									<span *ngIf="companyfarm_form.controls['name'].errors['required']" class="text-danger">Property name is required.</span>
 									<span *ngIf="!companyfarm_form.controls['name'].errors['required'] && companyfarm_form.controls['name'].errors['whitespace']" class="text-danger">Please enter valid data.</span>
@@ -40,7 +40,7 @@
 						<li>
 							<div class="login-input">
 								<label>Address</label>
-								<input type="text" name="address" formControlName="address" placeholder="">
+								<input type="text" name="address" formControlName="address" [(ngModel)]="companyfarmdata.address" placeholder="">
 							</div>
 						</li>
 						<li>
@@ -48,7 +48,7 @@
 								<li>
 									<div class="login-input">
 										<label>State</label>
-										<input type="text" name="state" formControlName="state" placeholder="">
+										<input type="text" name="state" formControlName="state" [(ngModel)]="companyfarmdata.state" placeholder="">
 										<div class="cust_err_msg" *ngIf="companyfarm_form_validation && !companyfarm_form.controls['state'].valid">
 											<span *ngIf="companyfarm_form.controls['state'].errors['required']" class="text-danger">State is required.</span>
 											<span *ngIf="!companyfarm_form.controls['state'].errors['required'] && companyfarm_form.controls['state'].errors['whitespace']" class="text-danger">Please enter valid data.</span>
@@ -58,7 +58,7 @@
 								<li>
 									<div class="login-input">
 										<label>Country</label>
-										<input type="text" name="country" placeholder="" formControlName="country">
+										<input type="text" name="country" placeholder="" [(ngModel)]="companyfarmdata.country" formControlName="country">
 										<div class="cust_err_msg" *ngIf="companyfarm_form_validation && !companyfarm_form.controls['country'].valid">
 											<span *ngIf="companyfarm_form.controls['country'].errors['required']" class="text-danger">Country is required.</span>
 											<span *ngIf="!companyfarm_form.controls['country'].errors['required'] && companyfarm_form.controls['country'].errors['whitespace']" class="text-danger">Please enter valid data.</span>
@@ -80,7 +80,7 @@
 							<div class="login-input">
 								<label>Choose From Menu</label>
 								<div class="select-wrap" >
-					            	<select name="region" formControlName="region">
+					            	<select name="region" formControlName="region" [(ngModel)]="companyfarmdata.region">
 						                <option *ngFor="let r of region_list" value="{{r['_id']}}">{{r['name']}}</option>
 									</select>
 									<div class="cust_err_msg" *ngIf="companyfarm_form_validation && !companyfarm_form.controls['region'].valid">
