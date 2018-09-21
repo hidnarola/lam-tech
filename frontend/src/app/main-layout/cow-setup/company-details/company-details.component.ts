@@ -52,7 +52,7 @@ export class CompanyDetailsComponent implements OnInit {
         this.getCompanyDetail();
       }, (error) => {
         if(error['error']['message']) {
-          this.toastr.success(error['error']['message'], 'Success!', { timeOut: 3000 });
+          this.toastr.error(error['error']['message'], 'Success!', { timeOut: 3000 });
         }
         this.show_spinner = false;
       }, () => {

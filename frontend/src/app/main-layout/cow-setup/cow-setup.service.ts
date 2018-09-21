@@ -43,4 +43,8 @@ export class CowSetupService {
   getAllRegion() {
     return this.http.get(`${this.api_host}region`);
   }
+  // Add farm
+  addNewFarm(data) {
+    return this.http.post(`${this.api_host}company/farm`, data);
+  }
 }
