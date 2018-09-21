@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer } from '@angular/core';
 import { Subject } from 'rxjs';
 import { DataTableDirective } from 'angular-datatables';
 import { CowSetupService } from '../../cow-setup.service';
@@ -13,7 +13,11 @@ export class ListComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject();
   cowfarms;
-  constructor(private cowsetupService: CowSetupService, ) { }
+  remove_farms;
+  checkall = false;
+  constructor(
+    public renderer: Renderer,
+    private cowsetupService: CowSetupService) { }
 
   ngOnInit() {
     const that = this;
@@ -24,53 +28,56 @@ export class ListComponent implements OnInit {
       // pagingType: 'full_numbers',
       pageLength: 10,
       serverSide: true,
-      processing: true,
+      processing: false,
       ordering: true,
       ajax: (dataTablesParameters: any, callback) => {
-        that.cowsetupService.get('company/farm').subscribe((res) => {
-          if (res['status']) {
-            this.cowfarms = res['data'];
-            callback({
-              recordsTotal: res['recordsTotal'],
-              recordsFiltered: res['recordsTotal'],
-              data: []
-            });
-          }
-        });
+        setTimeout(() => {
+          this.cowsetupService.get_by_post('company/farm/get', dataTablesParameters).subscribe((res) => {
+            if (res['status']) {
+              this.cowfarms = res['data'];
+              // console.log(this.cowfarms);
+              callback({
+                recordsTotal: res['recordsTotal'],
+                recordsFiltered: res['recordsTotal'],
+                data: []
+              });
+            }
+          })
+        }, 1000);
       },
+      columnDefs: [
+        { orderable: false, "targets": 0 }
+      ],
       columns: [
-        {
-          data:'',
-          // title: '<div class="checkbox">'
-          //   + '<input id="check11" type="checkbox" name="check" value="check11">'
-          //   + '<label for="check11"></label>'
-          //   + '</div>',
-          // render: function (data: any, type: any, full: any) {
-          //   return '<div class="checkbox">'
-          //     + '<input id="check12" type="checkbox" name="check" value="check12">'
-          //     + '<label for="check12"></label>'
-          //     + '</div>';
-          // }
-        },
-        {
-          data: 'property_id',
-          render: function (data: any, type: any, full: any) {
-            return '<span class="green-text-bold">' + data + '</span>';
-          }
-        },
-        { data: 'property_name' },
-        { data: 'address' },
-        { data: 'state' },
-        { data: 'country' },
-        {
-          render: function (data: any, type: any, full: any) {
-            return '-';
-          }
-        },
+        { data: "#" },
+        { data: 'PROPERTY ID CODE' },
+        { data: 'FARM NAME' },
+        { data: 'ADDRESS' },
+        { data: 'STATE' },
+        { data: 'COUNTRY' },
+        { data: 'ZIP' }
       ]
     };
   }
+  ngAfterViewInit(): void {
+    this.dtTrigger.next();
 
+  }
+  selectAll(event) {
+    this.checkall = event.target.checked;
+    // let checkone_all = document.querySelectorAll(".checkone");
+    // if (checkone_all) {
+    //   for (var i = 0; i < checkone_all.length; i++) {
+    //     checkone_all[i]['checked'] = event.target.checked;
+    //     // deleteUser(userItem);
+    //   };
+
+    // }
+  }
+  removeRow(id, event) {
+    // console.log(id);
+    // console.log(event.targets.checked);
+  }
   render(): void {
     this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
       // Destroy the table first

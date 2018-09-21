@@ -14,6 +14,10 @@ export class CowSetupService {
     const url = `${this.api_host}` + `${apiUrl}`;
     return this.http.get(url);
   }
+  get_by_post(apiUrl,data) {
+    const url = `${this.api_host}` + `${apiUrl}`;
+    return this.http.post(url, data);
+  }
   getParam(apiUrl, data) {
     const url = this.api_host + apiUrl;
     let Params = new HttpParams();
