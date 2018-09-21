@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CowSetupService } from '../../cow-setup.service'; 
 import { FormGroup, FormBuilder, Validators, FormControl, AbstractControl, NG_VALIDATORS, Validator } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -16,7 +17,8 @@ export class AddComponent implements OnInit {
   constructor(
     private CowSetupService : CowSetupService,
     private toastr : ToastrService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) { 
     this.companyfarm_form = this.fb.group({
       code : ['', [Validators.required, this.noWhitespaceValidator]],
@@ -44,7 +46,18 @@ export class AddComponent implements OnInit {
 
   addFarm(flag : boolean) {
     if(flag) {
-
+      this.show_spinner = true;
+      this.CowSetupService.addNewFarm(this.companyfarmdata).subscribe((response) => {
+        this.toastr.success(response['message'], 'Success!', { timeOut: 3000 });
+        this.router.navigate(['/dashboard/cow_setup/company_farms']);
+      }, (error) => {
+        if(error['error']['message']) {
+          this.toastr.error(error['error']['message'], 'Success!', { timeOut: 3000 });
+        }
+        this.show_spinner = false;
+      }, () => {
+        this.show_spinner = false;
+      });
     }
     this.companyfarm_form_validation = !flag;
   }
