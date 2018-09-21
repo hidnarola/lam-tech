@@ -74,6 +74,18 @@ import { TokenInterceptor } from '../shared/token.interceptor';
 //Load services
 import { CowBankService } from './cow-bank/cow-bank.service';
 import { CowSetupService } from './cow-setup/cow-setup.service';
+import { CowMunicatorComponent } from './cow-municator/cow-municator.component';
+import { CowMunicatorListComponent } from './cow-municator/cow-municator-list/cow-municator-list.component';
+import { CowMunicatorAddComponent } from './cow-municator/cow-municator-add/cow-municator-add.component';
+import { CowJournalComponent } from './cow-journal/cow-journal.component';
+import { CowJournalListComponent } from './cow-journal/cow-journal-list/cow-journal-list.component';
+import { CowJournalAddComponent } from './cow-journal/cow-journal-add/cow-journal-add.component';
+import { AdministratorComponent } from './administrator/administrator.component';
+import { SystemAdminComponent } from './administrator/system-admin/system-admin.component';
+import { AccountInformationComponent } from './administrator/account-information/account-information.component';
+import { OverviewComponent } from './administrator/account-information/overview/overview.component';
+import { RegisteredCompaniesComponent } from './administrator/account-information/registered-companies/registered-companies.component';
+import { RegisteredFarmsComponent } from './administrator/account-information/registered-farms/registered-farms.component';
 
 @NgModule({
   imports: [
@@ -146,7 +158,19 @@ import { CowSetupService } from './cow-setup/cow-setup.service';
     FinancialManagementComponent,
     AgriculturePracticesComponent,
     BioSecurityComponent,
-    SupplierManagementComponent
+    SupplierManagementComponent,
+    CowMunicatorComponent,
+    CowMunicatorListComponent,
+    CowMunicatorAddComponent,
+    CowJournalComponent,
+    CowJournalListComponent,
+    CowJournalAddComponent,
+    AdministratorComponent,
+    SystemAdminComponent,
+    AccountInformationComponent,
+    OverviewComponent,
+    RegisteredCompaniesComponent,
+    RegisteredFarmsComponent
   ],
   providers: [
     {

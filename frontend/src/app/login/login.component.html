@@ -9,14 +9,14 @@
 			<div class="login-body">
 				<div class="login-input">
 					<label>Email Address</label>
-					<input type="text" name="email" formControlName="email" [(ngModel)]="userdata.email" placeholder="majid@gmail.com">
+					<input type="text" name="email" formControlName="email" [(ngModel)]="userdata.email" placeholder="Enter you email">
 					<div class="cust_err_msg" *ngIf="login_form_validation && !login_form.controls['email'].valid">
 						<span *ngIf="login_form.controls['email'].errors['required']" class="text-danger">Email is required.</span>
 					</div>
 				</div>
 				<div class="login-input">
 					<label>Password</label>
-					<input type="password" name="password" formControlName="password" [(ngModel)]="userdata.password" placeholder="********">
+					<input type="password" name="password" formControlName="password" [(ngModel)]="userdata.password" placeholder="Enter you password">
 					<div class="cust_err_msg" *ngIf="login_form_validation && !login_form.controls['password'].valid">
 						<span *ngIf="login_form.controls['password'].errors['required']" class="text-danger">Password is required.</span>
 					</div>

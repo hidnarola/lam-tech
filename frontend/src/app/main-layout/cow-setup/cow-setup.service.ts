@@ -11,7 +11,7 @@ export class CowSetupService {
   private headers = new Headers();
 
   get(apiUrl) {
-    const url = this.api_host + apiUrl;
+    const url = `${this.api_host}` + `${apiUrl}`;
     return this.http.get(url);
   }
   getParam(apiUrl, data) {
