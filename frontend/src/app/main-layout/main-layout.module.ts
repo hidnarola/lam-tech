@@ -62,6 +62,7 @@ import { CowCloudListComponent } from './cow-cloud/cow-cloud-list/cow-cloud-list
 import { CowSummaryComponent } from './cow-cloud/cow-summary/cow-summary.component';
 import { CowProfileComponent } from './cow-cloud/cow-profile/cow-profile.component';
 import { CowPlianceComponent } from './cow-pliance/cow-pliance.component';
+import { QuestionaireRefComponent } from './cow-pliance/questionaire-ref/questionaire-ref.component';
 import { AnimalWelfareComponent } from './cow-pliance/animal-welfare/animal-welfare.component';
 import { EnvironmentalManagementComponent } from './cow-pliance/environmental-management/environmental-management.component';
 import { HumanResourcesComponent } from './cow-pliance/human-resources/human-resources.component';
@@ -141,6 +142,7 @@ import { CowSetupService } from './cow-setup/cow-setup.service';
     CowProfileComponent,
     CowPlianceComponent,
     AnimalWelfareComponent,
+    QuestionaireRefComponent,
     EnvironmentalManagementComponent,
     HumanResourcesComponent,
     FinancialManagementComponent,

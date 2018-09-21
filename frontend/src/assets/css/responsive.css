@@ -29,9 +29,9 @@
 
 @media(max-width:1024px){
 	.datatable-wrap{ width:100%; overflow:auto; padding:5px 0 15px; }
-	.row-border.dataTable {min-width:1024px;}
-	.datatable-wrap table.dataTable.row-border thead tr th{ padding:10px;}
-	.datatable-wrap table.dataTable.row-border tbody tr td{ padding:10px;}
+	.table.dataTable {min-width:1024px;}
+	.datatable-wrap table.dataTable.table thead tr th{ padding:10px;}
+	.datatable-wrap table.dataTable.table tbody tr td{ padding:10px;}
 	.pages-link{padding:0 0 10px;} 
 	.pages-link ul {white-space:nowrap; overflow-x:auto; padding:0 0 10px;}
 

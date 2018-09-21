@@ -57,6 +57,7 @@ import { CowProfileComponent } from './cow-cloud/cow-profile/cow-profile.compone
 // Cow pliance
 import { CowPlianceComponent } from './cow-pliance/cow-pliance.component';
 import { AnimalWelfareComponent } from './cow-pliance/animal-welfare/animal-welfare.component';
+import { QuestionaireRefComponent } from './cow-pliance/questionaire-ref/questionaire-ref.component';
 import { EnvironmentalManagementComponent } from './cow-pliance/environmental-management/environmental-management.component';
 import { HumanResourcesComponent } from './cow-pliance/human-resources/human-resources.component';
 import { FinancialManagementComponent } from './cow-pliance/financial-management/financial-management.component';
@@ -181,6 +182,7 @@ import { SupplierManagementComponent } from './cow-pliance/supplier-management/s
                         path: 'cow-pliance', component: CowPlianceComponent,
                         children: [
                             { path: 'animal-welfare', component: AnimalWelfareComponent },
+                            { path: 'animal-welfare/questionaire-ref', component: QuestionaireRefComponent },
                             { path: 'environmental-management', component: EnvironmentalManagementComponent },
                             { path: 'human-resources', component: HumanResourcesComponent },
                             { path: 'financial-management', component: FinancialManagementComponent },
