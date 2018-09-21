@@ -65,6 +65,25 @@ import { AgriculturePracticesComponent } from './cow-pliance/agriculture-practic
 import { BioSecurityComponent } from './cow-pliance/bio-security/bio-security.component';
 import { SupplierManagementComponent } from './cow-pliance/supplier-management/supplier-management.component';
 
+// Cow municator
+import { CowMunicatorComponent } from './cow-municator/cow-municator.component';
+import { CowMunicatorListComponent } from './cow-municator/cow-municator-list/cow-municator-list.component';
+import { CowMunicatorAddComponent } from './cow-municator/cow-municator-add/cow-municator-add.component';
+
+// Cow journal
+import { CowJournalComponent } from './cow-journal/cow-journal.component';
+import { CowJournalListComponent } from './cow-journal/cow-journal-list/cow-journal-list.component';
+import { CowJournalAddComponent } from './cow-journal/cow-journal-add/cow-journal-add.component';
+
+// Administrator
+import { AdministratorComponent } from './administrator/administrator.component';
+import { SystemAdminComponent } from './administrator/system-admin/system-admin.component';
+import { AccountInformationComponent } from './administrator/account-information/account-information.component';
+import { OverviewComponent } from './administrator/account-information/overview/overview.component';
+import { RegisteredCompaniesComponent } from './administrator/account-information/registered-companies/registered-companies.component';
+import { RegisteredFarmsComponent } from './administrator/account-information/registered-farms/registered-farms.component';
+
+
 @NgModule({
     imports: [
         RouterModule.forRoot([
@@ -189,6 +208,32 @@ import { SupplierManagementComponent } from './cow-pliance/supplier-management/s
                             { path: 'agricultural-practices', component: AgriculturePracticesComponent },
                             { path: 'bio-security', component: BioSecurityComponent },
                             { path: 'supplier-management', component: SupplierManagementComponent }
+                        ]
+                    },
+                    {
+                        path : 'cow-municator', component : CowMunicatorComponent,
+                        children : [
+                            {path : 'cow-municator-list', component : CowMunicatorListComponent},
+                            {path : 'cow-municator-add', component : CowMunicatorAddComponent }
+                        ]
+                    },
+                    {
+                        path : 'cow-journal', component : CowJournalComponent,
+                        children : [
+                            {path : 'cow-journal-list', component : CowJournalListComponent },
+                            {path : 'cow-journal-add', component : CowJournalAddComponent }
+                        ]
+                    },
+                    {
+                        path : 'administrator', component : AdministratorComponent,
+                        children : [
+                            {path : 'system-admin', component : SystemAdminComponent},
+                            {
+                                path : 'account-information', component : AccountInformationComponent,
+                                children : [
+                                    {path : 'overview', component: OverviewComponent}
+                                ]
+                            }
                         ]
                     }
                 ]

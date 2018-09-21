@@ -141,7 +141,7 @@
       <div class="get-started-body d-flex">
         <div class="login-input">
             <label>First Name</label>
-            <input type="text" name="fname" formControlName="fname" [(ngModel)]="userdata.first_name" placeholder="First Name">
+            <input type="text" name="fname" formControlName="fname" [(ngModel)]="userdata.first_name">
             <div class="cust_err_msg" *ngIf="getting_started_validation && !getting_started.controls['fname'].valid">
                 <span *ngIf="getting_started.controls['fname'].errors['required']" class="text-danger">First name is required.</span>
                 <span *ngIf="!getting_started.controls['fname'].errors['required'] && getting_started.controls['fname'].errors['whitespace']" class="text-danger">Please enter valid data.</span>
@@ -149,7 +149,7 @@
         </div>
         <div class="login-input">
             <label>Surname</label>
-            <input type="text" formControlName="lname" name="lname" [(ngModel)]="userdata.last_name" placeholder="Surname">
+            <input type="text" formControlName="lname" name="lname" [(ngModel)]="userdata.last_name">
             <div class="cust_err_msg" *ngIf="getting_started_validation && !getting_started.controls['lname'].valid">
               <span *ngIf="getting_started.controls['lname'].errors['required']" class="text-danger">Surname is required.</span>
               <span *ngIf="!getting_started.controls['lname'].errors['required'] && getting_started.controls['lname'].errors['whitespace']" class="text-danger">Please enter valid data.</span>
@@ -158,7 +158,7 @@
 
         <div class="login-input">
             <label>Company Name</label>
-            <input type="text" formControlName="company_name" name="company" [(ngModel)]="userdata.company_name" placeholder="Company">
+            <input type="text" formControlName="company_name" name="company" [(ngModel)]="userdata.company_name">
             <div class="cust_err_msg" *ngIf="getting_started_validation && !getting_started.controls['company_name'].valid">
               <span *ngIf="getting_started.controls['company_name'].errors['required']" class="text-danger">Company name is required.</span>
               <span *ngIf="!getting_started.controls['company_name'].errors['required'] && getting_started.controls['lname'].errors['whitespace']" class="text-danger">Please enter valid data.</span>
@@ -166,7 +166,7 @@
         </div>
         <div class="login-input">
             <label>Email</label>
-            <input type="email" formControlName="email" name="email" [(ngModel)]="userdata.email" placeholder="Email">
+            <input type="email" formControlName="email" name="email" [(ngModel)]="userdata.email" >
             <div class="cust_err_msg" *ngIf="getting_started_validation && !getting_started.controls['email'].valid">
               <span *ngIf="getting_started.controls['email'].errors['required']" class="text-danger">Email is required.</span>
               <span *ngIf="!getting_started.controls['email'].errors['required'] && getting_started.controls['email'].errors['email']" class="text-danger">Please enter valid email.</span>

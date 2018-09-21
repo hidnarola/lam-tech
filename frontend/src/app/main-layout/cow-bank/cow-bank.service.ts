@@ -12,17 +12,17 @@ export class CowBankService {
   //   return this.http.post(`${this.api_host}login`, data);
   // }
 
-  get(apiUrl) {
-    const url = this.api_host + apiUrl;
-    return this.http.get(url);
-  }
-  getParam(apiUrl, data) {
-    const url = this.api_host + apiUrl;
-    let Params = new HttpParams();
-    for (const key in data) {
-      Params = Params.append(key, data[key]);
-    }
-    // Begin assigning parameters
-    return this.http.get(url, { params: Params });
-  }
+  // get(apiUrl) {
+  //   const url = this.api_host + apiUrl;
+  //   return this.http.get(url);
+  // }
+  // getParam(apiUrl, data) {
+  //   const url = this.api_host + apiUrl;
+  //   let Params = new HttpParams();
+  //   for (const key in data) {
+  //     Params = Params.append(key, data[key]);
+  //   }
+  //   // Begin assigning parameters
+  //   return this.http.get(url, { params: Params });
+  // }
 }
