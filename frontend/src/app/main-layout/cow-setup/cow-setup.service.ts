@@ -35,4 +35,8 @@ export class CowSetupService {
   getCompanyDetails() {
     return this.http.get(`${this.api_host}company`);
   }
+  // Get all region
+  getAllRegion() {
+    return this.http.get(`${this.api_host}region`);
+  }
 }
